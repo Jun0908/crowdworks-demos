@@ -1,14 +1,14 @@
 # Grok Botでの導入・検証チェックリスト
 
-全項目は未実施。ファイル作成だけでGrok Bot側の設定完了とはしない。
+[案件管理CLIと4つのSkill](../../agency_runtime/README.md)を実装済み。Grok側は導入・初回案件を実行中。[確認できた状態](runtime-status.md)を参照する。ファイル作成だけでGrok Bot側の設定完了とはしない。
 
 ## A. 導入（目安0〜10分）
 
-- [ ] START-HERE.mdと設計資料をDirectorに渡す。
-- [ ] 5 Botを作成または再利用し、恒常指示を登録する。
+- [x] START-HERE.mdと設計資料をDirectorに渡す。
+- [x] 5 Botを作成または再利用（Grok UIとフウの報告）。恒常指示の保存内容は別途検証する。
 - [ ] bot-registryに実名と参照、担当を記録。
 - [ ] 共有作業場所にファイルを保存し、別Botから読めることを確認。
-- [ ] Director→専門Bot→DirectorのACK往復を確認。
+- [x] Director→専門Bot→DirectorのACK往復を確認（フウの報告とQAのping確認プレビュー）。
 - [ ] 接続・実行できるツールを一覧化。未確認機能はreadyにしない。
 
 完成条件：5役が実在し、ファイルとメッセージで引き継げる。

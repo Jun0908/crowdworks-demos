@@ -36,7 +36,7 @@ def csv_bytes(columns, records):
     return output.getvalue().encode('utf-8-sig')
 
 
-def invoices(payload):
+def invoices(payload, method=None):
     documents = payload.get('documents')
     if not isinstance(documents, list) or not 1 <= len(documents) <= 5:
         raise ValueError('PDFは1〜5件を選択してください。')
@@ -59,13 +59,13 @@ def invoices(payload):
         name = doc.get('name', 'invoice.pdf')
         if not isinstance(name, str) or len(name) > 200:
             raise ValueError('PDFのファイル名が不正です。')
-        method = 'OCR (Tesseract.js / jpn)' if doc.get('ocr') else 'PDF text (PDF.js)'
+        extraction_method = method or ('OCR (Tesseract.js / jpn)' if doc.get('ocr') else 'PDF text (PDF.js)')
         if doc.get('error'):
             result = I.Result(file=name, method='error', needs_review=True,
                               notes=['PDF読み取りエラー: ' + str(doc['error'])[:300]])
             result._debug = {'lines': []}
         else:
-            result = I.process_lines(lines, name, method, self_name)
+            result = I.process_lines(lines, name, extraction_method, self_name)
         results.append(result)
     I.mark_duplicates(results)
     results.sort(key=lambda r: (r.due_date is None, r.due_date or date.max))

@@ -2,7 +2,7 @@
 
 このファイル以下の本文と同じフォルダーの設計資料を、Grok Botの司令塔に渡す。非公開GitHubへ接続済みなら `docs/agentic-agency/` を読ませる。接続していなければ資料を添付して始める。APIキーはこの文章にも添付資料にも入れない。
 
-以下はユーザーがGrok Botで実行を開始するためのコピー用指示。Codex側ではまだ実行していない。
+以下はGrok Botで実行を開始するためのコピー用指示。2026-10-11に既存のフウから導入を開始済み。[稼働状況](runtime-status.md)を確認して重複作成を避ける。案件台帳の実装は [agency_runtime](../../agency_runtime/README.md)、登録用Skillは [grok-kit](grok-kit/agency-orchestrate/SKILL.md) を使う。
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "status": "implementation_plan_not_runtime_registry",
-  "activationRule": "Adapter, connection and acceptance checks must pass before enabling a capability. Existing CLI tools are not yet orchestrator adapters.",
+  "status": "catalog_not_runtime_readiness",
+  "activationRule": "Local adapters exist for the three data tools. Native Bot tools, connections and acceptance checks must pass before enabling each capability in the runtime registry.",
   "capabilities": [
     {"id":"opportunity_discovery","category":"sales","title":"営業機会の発見","status":"planned","inputs":["company_policy","source_domains"],"outputs":["opportunities.json"],"requires":["search","source_store"]},
     {"id":"account_research","category":"research","title":"企業・顧客調査","status":"planned","inputs":["company_name_or_url","questions"],"outputs":["account_brief.md"],"requires":["search","source_store"]},

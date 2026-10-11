@@ -1,19 +1,18 @@
 # Agentic Agency / Grok Bot setup package
 
-Generated from docs/agentic-agency. This is a setup specification, not evidence of registered Bots.
-
-Start with START-HERE.md below. All referenced specification files are included as sections in this document.
+Generated from maintained repo files. Runtime code must be obtained from the repo.
+Bot registration and runtime evidence are recorded separately in runtime-status.md.
 
 
 ---
 
-# File: START-HERE.md
+# File: docs/agentic-agency/START-HERE.md
 
 # Grok Botへ最初に渡す指示
 
 このファイル以下の本文と同じフォルダーの設計資料を、Grok Botの司令塔に渡す。非公開GitHubへ接続済みなら `docs/agentic-agency/` を読ませる。接続していなければ資料を添付して始める。APIキーはこの文章にも添付資料にも入れない。
 
-以下はユーザーがGrok Botで実行を開始するためのコピー用指示。Codex側ではまだ実行していない。
+以下はGrok Botで実行を開始するためのコピー用指示。2026-10-11に既存のフウから導入を開始済み。[稼働状況](runtime-status.md)を確認して重複作成を避ける。案件台帳の実装は [agency_runtime](../../agency_runtime/README.md)、登録用Skillは [grok-kit](grok-kit/agency-orchestrate/SKILL.md) を使う。
 
 ---
 
@@ -51,11 +50,11 @@ Start with START-HERE.md below. All referenced specification files are included 
 
 ---
 
-# File: README.md
+# File: docs/agentic-agency/README.md
 
 # Agentic Agency — Grok Bot内で動く受託チーム
 
-実装仕様 v1 / 2026-10-11。ユーザーが指定した実行環境は **Grok Bot内の司令塔Botと専門Bot**。ここにあるのは設定・運用に使う設計パッケージ。Grok Botへの登録や実行はまだ行っていない。
+実装仕様 v1 / 2026-10-11。実行環境は **Grok Bot内の司令塔Botと専門Bot**。[共有案件CLI](../../agency_runtime/README.md)と[Grok用Skill](grok-kit/agency-orchestrate/SKILL.md)を実装済み。Grokで既存3 Botと新規QA・Deliveryの導入を開始し、初回の調査案件を進めている。[実装と稼働状況](runtime-status.md)を参照する。
 
 ## プロダクト
 
@@ -73,7 +72,7 @@ Start with START-HERE.md below. All referenced specification files are included 
 | Agency QA | 要件・出典・形式・動作の確認 | PASS / REVISE / BLOCKEDと根拠 |
 | Agency Delivery | ファイル整理、使い方、納品準備 | 成果物一式、説明、未確認事項 |
 
-初期はDirectorから専門Botへ直接依頼し、完了はDirectorへ返す。全員が他の全員に割り振らない。各Botの恒常ルールとコピー用の設定は [agent-instructions.md](agent-instructions.md)。
+初期はDirectorから専門Botへ直接依頼し、完了はDirectorへ返す。全員が他の全員に割り振らない。実際のBot名はフウ＝Director、リサーチ担当＝Scout、コード担当＝Makerを再利用する。恒常ルールは [agent-instructions.md](agent-instructions.md)、CLIの操作手順は [grok-kit](grok-kit/agency-orchestrate/SKILL.md)。
 
 ## 基本フロー
 
@@ -149,7 +148,7 @@ Grok Bot自身の作業と、接続先サービスのAPIを分ける。通常の
 
 ---
 
-# File: architecture.md
+# File: docs/agentic-agency/architecture.md
 
 # Grok Botオーケストレーション仕様
 
@@ -281,7 +280,7 @@ Grok Botの実行利用量は、利用できる計測手段で記録する。料
 
 ---
 
-# File: agent-instructions.md
+# File: docs/agentic-agency/agent-instructions.md
 
 # Bot設定とSkill原案
 
@@ -374,7 +373,7 @@ Grok Botの各Botの説明・恒常指示に登録する原案。実行時の条
 
 ---
 
-# File: connections.md
+# File: docs/agentic-agency/connections.md
 
 # API・サービスを後から接続する設計
 
@@ -433,19 +432,19 @@ Grok Botの会話、担当Botへの依頼、通常のファイル制作を出発
 
 ---
 
-# File: implementation-backlog.md
+# File: docs/agentic-agency/implementation-backlog.md
 
 # Grok Botでの導入・検証チェックリスト
 
-全項目は未実施。ファイル作成だけでGrok Bot側の設定完了とはしない。
+[案件管理CLIと4つのSkill](../../agency_runtime/README.md)を実装済み。Grok側は導入・初回案件を実行中。[確認できた状態](runtime-status.md)を参照する。ファイル作成だけでGrok Bot側の設定完了とはしない。
 
 ## A. 導入（目安0〜10分）
 
-- [ ] START-HERE.mdと設計資料をDirectorに渡す。
-- [ ] 5 Botを作成または再利用し、恒常指示を登録する。
+- [x] START-HERE.mdと設計資料をDirectorに渡す。
+- [x] 5 Botを作成または再利用（Grok UIとフウの報告）。恒常指示の保存内容は別途検証する。
 - [ ] bot-registryに実名と参照、担当を記録。
 - [ ] 共有作業場所にファイルを保存し、別Botから読めることを確認。
-- [ ] Director→専門Bot→DirectorのACK往復を確認。
+- [x] Director→専門Bot→DirectorのACK往復を確認（フウの報告とQAのping確認プレビュー）。
 - [ ] 接続・実行できるツールを一覧化。未確認機能はreadyにしない。
 
 完成条件：5役が実在し、ファイルとメッセージで引き継げる。
@@ -513,82 +512,8 @@ Grok Botの会話、担当Botへの依頼、通常のファイル制作を出発
 
 ---
 
-# File: company-policy.example.json
+# File: docs/agentic-agency/contracts.schema.json
 
-```json
-{
-  "schemaVersion": 1,
-  "name": "Agentic Agency",
-  "timezone": "Asia/Tokyo",
-  "language": "ja-JP",
-  "mission": "依頼に合う調査・制作を行い、検証可能な成果物を返す",
-  "targetIndustries": [],
-  "sourceDomains": [],
-  "discoveryQueries": [],
-  "preferredCapabilities": ["account_research", "market_research", "proposal_draft", "leads_clean", "contract_extract", "invoice_extract"],
-  "discoveryEnabled": false,
-  "limits": {
-    "maxActiveJobs": 1,
-    "maxActiveAssignments": 1,
-    "maxCandidatesPerRun": 5,
-    "maxDetailedResearchPerRun": 3,
-    "maxProductionJobsPerRun": 1,
-    "maxStepsPerJob": 20,
-    "maxRevisions": 2,
-    "maxExternalApiCostUsd": 0
-  },
-  "scoring": {"serviceFit": 40, "requestSpecificity": 30, "productionFeasibility": 20, "freshness": 10, "autoPrepareThreshold": 70},
-  "approvals": {"externalSend": true, "publish": true, "purchase": true, "scheduleEnable": true},
-  "schedule": {"enabled": false, "expression": null},
-  "notification": "Notify only on completed artifacts, failures or required decisions. Remain quiet on unchanged state or no new candidates.",
-  "paused": false
-}
-```
-
-
----
-
-# File: capabilities.json
-
-```json
-{
-  "schemaVersion": 1,
-  "status": "implementation_plan_not_runtime_registry",
-  "activationRule": "Adapter, connection and acceptance checks must pass before enabling a capability. Existing CLI tools are not yet orchestrator adapters.",
-  "capabilities": [
-    {"id":"opportunity_discovery","category":"sales","title":"営業機会の発見","status":"planned","inputs":["company_policy","source_domains"],"outputs":["opportunities.json"],"requires":["search","source_store"]},
-    {"id":"account_research","category":"research","title":"企業・顧客調査","status":"planned","inputs":["company_name_or_url","questions"],"outputs":["account_brief.md"],"requires":["search","source_store"]},
-    {"id":"market_research","category":"research","title":"市場調査","status":"planned","inputs":["topic","region","period","questions"],"outputs":["research.md","sources.json"],"requires":["search","source_store"]},
-    {"id":"competitor_comparison","category":"research","title":"競合比較","status":"planned","inputs":["competitors","comparison_axes"],"outputs":["comparison.csv","summary.md"],"requires":["search","source_store","csv_writer"]},
-    {"id":"requirements_brief","category":"planning","title":"要件定義・実施計画","status":"planned","inputs":["job_brief","constraints"],"outputs":["requirements.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"proposal_draft","category":"sales","title":"営業提案書","status":"planned","inputs":["opportunity_or_brief","research","scope"],"outputs":["proposal.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"outreach_draft","category":"sales","title":"営業・フォロー文面","status":"planned","inputs":["recipient_context","verified_facts","desired_action"],"outputs":["message_draft.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"article_draft","category":"content","title":"記事初稿","status":"planned","inputs":["audience","topic","outline","sources"],"outputs":["article.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"faq_draft","category":"content","title":"FAQ・業務手順書","status":"planned","inputs":["source_documents","audience"],"outputs":["faq.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"leads_clean","category":"data","title":"営業リスト整理","status":"adapter_pending","inputs":["places_json","areas","classification_options"],"outputs":["leads.csv","excluded.csv","leads.xlsx"],"requires":["python_runner","leads_adapter"],"existingSource":"2_焼肉店営業リスト/"},
-    {"id":"contract_extract","category":"data","title":"契約更新抽出","status":"adapter_pending","inputs":["staff_csv","target_month","date_convention"],"outputs":["renewals.csv","renewals.xlsx","messages.zip"],"requires":["python_runner","contract_adapter"],"existingSource":"3_契約更新抽出/"},
-    {"id":"invoice_extract","category":"data","title":"請求書抽出","status":"adapter_pending","inputs":["pdf_files","reference_date"],"outputs":["invoices.xlsx","extracted.json","review_notes.md"],"requires":["python_runner","pdf_ocr","invoice_adapter"],"existingSource":"1_請求書読み取り/"},
-    {"id":"artifact_review","category":"quality","title":"品質確認","status":"planned","inputs":["requirements","artifacts","sources","machine_checks"],"outputs":["review.json"],"requires":["text_generation","artifact_read","validators"]},
-    {"id":"delivery_package","category":"delivery","title":"納品パッケージ作成","status":"planned","inputs":["validated_artifacts"],"outputs":["delivery.md","manifest.json"],"requires":["artifact_store","manifest_writer"]},
-    {"id":"website_build","category":"development","title":"Webサイト制作","status":"planned","inputs":["requirements","assets","copy"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
-    {"id":"application_build","category":"development","title":"業務アプリ制作","status":"planned","inputs":["requirements","data_contracts","acceptance_criteria"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
-    {"id":"slide_deck","category":"content","title":"提案・説明スライド","status":"planned","inputs":["audience","outline","sources","brand"],"outputs":["presentation.pptx","preview.pdf"],"requires":["slide_renderer","visual_validation"]},
-    {"id":"image_creation","category":"media","title":"画像・バナー制作","status":"planned","inputs":["creative_brief","dimensions","licensed_assets"],"outputs":["image.png"],"requires":["image_generation","image_validation"]},
-    {"id":"video_creation","category":"media","title":"説明動画制作","status":"planned","inputs":["script","duration","licensed_assets"],"outputs":["video.mp4"],"requires":["video_generation","video_validation"]},
-    {"id":"crm_sync","category":"operations","title":"CRM更新","status":"planned","inputs":["verified_account_changes"],"outputs":["sync_receipt.json"],"requires":["crm_connector","approval_guard"]},
-    {"id":"external_delivery","category":"delivery","title":"承認済み納品の送信","status":"planned","inputs":["approved_payload","recipient","artifact_versions"],"outputs":["delivery_receipt.json"],"requires":["delivery_connector","approval_guard","idempotency_store"]},
-    {"id":"recurring_report","category":"operations","title":"定期調査・差分レポート","status":"planned","inputs":["baseline_artifacts","schedule_policy"],"outputs":["changes.md","updated_report.md"],"requires":["search","scheduler","artifact_store"]},
-    {"id":"skill_improvement","category":"operations","title":"作業手順の改善案","status":"planned","inputs":["run_metrics","failures","current_instructions"],"outputs":["instruction_patch.md","evaluation_plan.md"],"requires":["text_generation","evaluation_runner"]}
-  ]
-}
-```
-
-
----
-
-# File: contracts.schema.json
-
-```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:agentic-agency:contracts:v1",
@@ -655,14 +580,81 @@ Grok Botの会話、担当Botへの依頼、通常のファイル制作を出発
     }
   }
 }
-```
 
 
 ---
 
-# File: example-job.json
+# File: docs/agentic-agency/capabilities.json
 
-```json
+{
+  "schemaVersion": 1,
+  "status": "catalog_not_runtime_readiness",
+  "activationRule": "Local adapters exist for the three data tools. Native Bot tools, connections and acceptance checks must pass before enabling each capability in the runtime registry.",
+  "capabilities": [
+    {"id":"opportunity_discovery","category":"sales","title":"営業機会の発見","status":"planned","inputs":["company_policy","source_domains"],"outputs":["opportunities.json"],"requires":["search","source_store"]},
+    {"id":"account_research","category":"research","title":"企業・顧客調査","status":"planned","inputs":["company_name_or_url","questions"],"outputs":["account_brief.md"],"requires":["search","source_store"]},
+    {"id":"market_research","category":"research","title":"市場調査","status":"planned","inputs":["topic","region","period","questions"],"outputs":["research.md","sources.json"],"requires":["search","source_store"]},
+    {"id":"competitor_comparison","category":"research","title":"競合比較","status":"planned","inputs":["competitors","comparison_axes"],"outputs":["comparison.csv","summary.md"],"requires":["search","source_store","csv_writer"]},
+    {"id":"requirements_brief","category":"planning","title":"要件定義・実施計画","status":"planned","inputs":["job_brief","constraints"],"outputs":["requirements.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"proposal_draft","category":"sales","title":"営業提案書","status":"planned","inputs":["opportunity_or_brief","research","scope"],"outputs":["proposal.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"outreach_draft","category":"sales","title":"営業・フォロー文面","status":"planned","inputs":["recipient_context","verified_facts","desired_action"],"outputs":["message_draft.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"article_draft","category":"content","title":"記事初稿","status":"planned","inputs":["audience","topic","outline","sources"],"outputs":["article.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"faq_draft","category":"content","title":"FAQ・業務手順書","status":"planned","inputs":["source_documents","audience"],"outputs":["faq.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"leads_clean","category":"data","title":"営業リスト整理","status":"adapter_pending","inputs":["places_json","areas","classification_options"],"outputs":["leads.csv","excluded.csv","leads.xlsx"],"requires":["python_runner","leads_adapter"],"existingSource":"2_焼肉店営業リスト/"},
+    {"id":"contract_extract","category":"data","title":"契約更新抽出","status":"adapter_pending","inputs":["staff_csv","target_month","date_convention"],"outputs":["renewals.csv","renewals.xlsx","messages.zip"],"requires":["python_runner","contract_adapter"],"existingSource":"3_契約更新抽出/"},
+    {"id":"invoice_extract","category":"data","title":"請求書抽出","status":"adapter_pending","inputs":["pdf_files","reference_date"],"outputs":["invoices.xlsx","extracted.json","review_notes.md"],"requires":["python_runner","pdf_ocr","invoice_adapter"],"existingSource":"1_請求書読み取り/"},
+    {"id":"artifact_review","category":"quality","title":"品質確認","status":"planned","inputs":["requirements","artifacts","sources","machine_checks"],"outputs":["review.json"],"requires":["text_generation","artifact_read","validators"]},
+    {"id":"delivery_package","category":"delivery","title":"納品パッケージ作成","status":"planned","inputs":["validated_artifacts"],"outputs":["delivery.md","manifest.json"],"requires":["artifact_store","manifest_writer"]},
+    {"id":"website_build","category":"development","title":"Webサイト制作","status":"planned","inputs":["requirements","assets","copy"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
+    {"id":"application_build","category":"development","title":"業務アプリ制作","status":"planned","inputs":["requirements","data_contracts","acceptance_criteria"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
+    {"id":"slide_deck","category":"content","title":"提案・説明スライド","status":"planned","inputs":["audience","outline","sources","brand"],"outputs":["presentation.pptx","preview.pdf"],"requires":["slide_renderer","visual_validation"]},
+    {"id":"image_creation","category":"media","title":"画像・バナー制作","status":"planned","inputs":["creative_brief","dimensions","licensed_assets"],"outputs":["image.png"],"requires":["image_generation","image_validation"]},
+    {"id":"video_creation","category":"media","title":"説明動画制作","status":"planned","inputs":["script","duration","licensed_assets"],"outputs":["video.mp4"],"requires":["video_generation","video_validation"]},
+    {"id":"crm_sync","category":"operations","title":"CRM更新","status":"planned","inputs":["verified_account_changes"],"outputs":["sync_receipt.json"],"requires":["crm_connector","approval_guard"]},
+    {"id":"external_delivery","category":"delivery","title":"承認済み納品の送信","status":"planned","inputs":["approved_payload","recipient","artifact_versions"],"outputs":["delivery_receipt.json"],"requires":["delivery_connector","approval_guard","idempotency_store"]},
+    {"id":"recurring_report","category":"operations","title":"定期調査・差分レポート","status":"planned","inputs":["baseline_artifacts","schedule_policy"],"outputs":["changes.md","updated_report.md"],"requires":["search","scheduler","artifact_store"]},
+    {"id":"skill_improvement","category":"operations","title":"作業手順の改善案","status":"planned","inputs":["run_metrics","failures","current_instructions"],"outputs":["instruction_patch.md","evaluation_plan.md"],"requires":["text_generation","evaluation_runner"]}
+  ]
+}
+
+
+---
+
+# File: docs/agentic-agency/company-policy.example.json
+
+{
+  "schemaVersion": 1,
+  "name": "Agentic Agency",
+  "timezone": "Asia/Tokyo",
+  "language": "ja-JP",
+  "mission": "依頼に合う調査・制作を行い、検証可能な成果物を返す",
+  "targetIndustries": [],
+  "sourceDomains": [],
+  "discoveryQueries": [],
+  "preferredCapabilities": ["account_research", "market_research", "proposal_draft", "leads_clean", "contract_extract", "invoice_extract"],
+  "discoveryEnabled": false,
+  "limits": {
+    "maxActiveJobs": 1,
+    "maxActiveAssignments": 1,
+    "maxCandidatesPerRun": 5,
+    "maxDetailedResearchPerRun": 3,
+    "maxProductionJobsPerRun": 1,
+    "maxStepsPerJob": 20,
+    "maxRevisions": 2,
+    "maxExternalApiCostUsd": 0
+  },
+  "scoring": {"serviceFit": 40, "requestSpecificity": 30, "productionFeasibility": 20, "freshness": 10, "autoPrepareThreshold": 70},
+  "approvals": {"externalSend": true, "publish": true, "purchase": true, "scheduleEnable": true},
+  "schedule": {"enabled": false, "expression": null},
+  "notification": "Notify only on completed artifacts, failures or required decisions. Remain quiet on unchanged state or no new candidates.",
+  "paused": false
+}
+
+
+---
+
+# File: docs/agentic-agency/example-job.json
+
 {
   "kind": "job_brief",
   "title": "飲食店向け業務改善サービスの営業準備",
@@ -680,4 +672,187 @@ Grok Botの会話、担当Botへの依頼、通常のファイル制作を出発
   "sourceUrls": [],
   "maxExternalApiCostUsd": 0
 }
+
+
+---
+
+# File: docs/agentic-agency/runtime-status.md
+
+# 実装と稼働状況
+
+2026-10-11の記録。ローカル検証とGrokでの稼働を区別する。
+
+## コード実装・ローカル検証
+
+- `agency_runtime`：SQLite台帳、ASSIGN発行、再送の冪等性、1同時割当、入力コピー、出典登録、ファイルSHA256、QA合格条件、修正版の下流無効化、停止/再開/取消、納品ZIP。
+- 既存3処理のアダプター：契約CSV、営業Places形式JSON、請求書の抽出済みテキストから実ファイルを生成。API通信0件。検索・PDF抽出・OCR自体はこのCLIに含まれない。
+- Grok用4 Skill：司令塔、営業/調査/制作、QA、納品準備。bootstrapで配布用コピーを作成可能。コピーとGrokのSkill登録は別操作。
+- `python -m pytest agency_runtime/tests web/tests -q`：**50件成功**（ランタイム21件、既存Web処理29件）。契約サンプル250行から80対象、営業サンプル26件から14候補を確認。請求書はテキストfixtureから11,000円を抽出。
+
+## Grok Botで観察した状態
+
+Grok Botデスクトップのフウとの会話で実装指示を送り、次を確認した。
+
+- 既存Bot：フウ（司令塔）、リサーチ担当（営業・調査）、コード担当（制作）。
+- サイドバーに新規Bot「Agency QA」「Agency Delivery」が出現。
+- 15:02、フウが設定ファイルの保存、4担当とのACK往復、共有pingファイルの読み取り確認を報告。
+- Agency QAの会話プレビューにもping tokenと担当登録の確認が表示された。
+- フウがリサーチ担当へ最初の飲食店向け業務改善調査を割り当てた。
+
+これらはGrokのUIとBot報告に基づく。クラウドのファイル内容・成果物・QAをローカルテストで代替しない。GrokでのCLI導入と案件完走の結果は、取得できた実物と報告に基づき追記する。
+
+Routineはまだ有効化していない。外部API接続と実行時刻・対象は今後設定する。
+
+
+---
+
+# File: agency_runtime/README.md
+
+# Grok Bot共有案件ランタイム
+
+Grokの司令塔が専門Botへ仕事を振るための実装。SQLiteに案件・割当・結果を保存し、共有コンピュータへJSON、成果物、作業ボードを出力する。GrokのBot間メッセージ、検索、文章・コード生成と組み合わせる。外部のLLM呼び出しサーバーは起動しない。
+
+## Grok共有コンピュータへ導入
+
+Grokからリポジトリを取得し、repo内で実行する。Python 3.11以上。APIキーなしで初期化可能。
+
+```bash
+python -m pip install -r agency_runtime/requirements.txt
+export AGENCY_ROOT=/workspace/agentic-agency/runtime-v1
+python -m agency_runtime bootstrap --kit-out /workspace/agentic-agency/cli-skills
+python -m agency_runtime show
 ```
+
+既存の手書きconfig/jobsがある場所は上書きしない。runtime-v1は独立した台帳。Botが既に完了した案件の状態を自動移行したとは扱わない。
+
+`docs/agentic-agency/grok-kit/` の4つのSKILL.mdをGrokのSkillとして保存し、司令塔・営業/調査/制作・QA・Deliveryへ割り当てる。コピーしただけではGrokへのSkill登録にならない。Botを実際に作成する操作とRoutineの実行はGrok側が担当する。
+
+## 単発案件
+
+```bash
+python -m agency_runtime create --brief docs/agentic-agency/example-job.json --mode live --request-key first-restaurant-proposal
+python -m agency_runtime plan JOB_ID --file plan.json
+python -m agency_runtime next JOB_ID
+```
+
+返されたassignmentFileを担当Botへ送る。対応能力は、Grok側で実際に検証後に `capability market_research --readiness ready --evidence '検証した内容とファイル'` とする。未検証・API未接続なら割当はwaiting_connectionで止まる。
+
+担当Botは成果物と出典を `artifact` / `source` へ登録し、`finish` で結果を確定する。詳細コマンドは `python -m agency_runtime --help` と各コマンドの `--help`。`inspect` はファイルの実在・hashを検査し、内容のQAはBotが行う。
+
+QAのチェックIDは工程条件のcriterion_1...、依頼条件のjob_criterion_1...。各最新版成果物のartifactIdに検査根拠を結びつける。納品は `package` でZIPを作成し、全工程完了後はready_for_review。ユーザーの確認後に `accept JOB_ID`。取消後の結果や古い版の再提出は拒否する。
+
+## APIキーなしの3処理
+
+`run ASSIGNMENT_ID --payload payload.json` で、契約更新抽出・営業リスト整理・請求書抽出を呼べる。実データ処理をして成果物を登録するが、結果のfinish／QAは自動で合格にしない。
+
+| capability | 入力JSON | 主な出力 |
+|---|---|---|
+| contract_extract | csv_text, month, lookahead, convention | renewals.xlsx / csv / zip |
+| leads_clean | data（Places形式）, sample, areas, use_reviews | leads.xlsx / csv, excluded.csv |
+| invoice_extract | documents=[{name,lines}], today, self_name | invoices.xlsx / csv / json |
+
+請求書入力は抽出済みテキスト。PDFテキスト抽出・OCR自体はGrokのツールで行うか、今後接続する。入力のOCRフラグだけでOCRを実行済みとは表示しない。営業リストも外部検索は行わない。Grokの調査ツール・Google Places等で取得したJSONを渡す。
+
+23種類の仕事はカタログにあり、文章・Web制作等はネイティブBotが作成したファイルを登録できる。すべての能力を実装済み・接続済みとみなさない。外部APIのキーは共有JSONやGitへ記録せず、Grokの接続設定に追加する。
+
+## 検証
+
+Windowsのローカル台帳で検証する例：
+
+```powershell
+python -m agency_runtime --root .demo-output/agency-check init
+python -m pytest agency_runtime/tests web/tests -q
+```
+
+21のランタイムテストで、再送、同時割当、循環計画、停止/再開、取消後の結果、修正版のQA、hash改変、入力コピー、出典候補の重複、3処理の実ファイル生成、CLI再起動を検査する。Bot間通信の検証は別途Grokの実行証跡を確認する。
+
+台帳は1つの共有ローカルファイルシステム向け。各Botが同じディレクトリを読み書きできることを先に検証する。複数ホスト間のネットワークファイル共有はこの版の対象外。計算/制作の実行途中に異常終了した場合、同じ割当のinspect/showから再開する。
+
+
+---
+
+# File: docs/agentic-agency/grok-kit/agency-orchestrate/SKILL.md
+
+---
+name: agency-orchestrate
+description: Grok Bot内の司令塔が営業機会・依頼を案件化し、専門Botへ割り当て、調査から納品準備まで進める。
+---
+
+Grok BotのネイティブBot間メッセージで進行する。推論・Bot作成・メッセージ・RoutineはGrokが担当し、案件台帳にはリポジトリの `python -m agency_runtime` を使う。独自のLLMサーバーは不要。
+
+## 実行環境
+
+Grokの共有コンピュータ上のrepoを作業ディレクトリとし、各Botで同じ `AGENCY_ROOT` を設定する。既存の案件を保護するため初回のCLI台帳は `/workspace/agentic-agency/runtime-v1`。入力JSONはrepoの `docs/agentic-agency/contracts.schema.json` に従う。CLIのstdoutは `{ok,data}`、失敗はstderrと終了コード1。JSONのIDとパスを後続コマンドへ渡す。
+
+## 司令塔の手順
+
+1. `show` と `board.md` を確認する。進行中案件があればその案件を優先する。案件候補は、公開情報を実際に読んでから `opportunity --key <stable-source-key> --title ... --url ... --evidence-file ...` で重複を抑えて記録する。サンプルと実案件を分ける。
+2. 依頼をbrief.jsonにまとめ、`create --brief <file> --mode live --request-key <stable-key>`。同じ依頼の再送は同じキーを使う。入力ファイルがあれば `input-import <jobId> --file ...` でコピーを保存してから計画する。
+3. `plan <jobId> --file <plan.json>`。工程は役割、対応能力、依存関係、合格条件を含む。制作・調査・営業工程は必ずQAにつなぎ、納品準備はQAに依存させる。不明点を推測してblocking questionを消さない。
+4. `next <jobId>` の返したASSIGNを `ownerBot` へGrokのメッセージ機能で渡す。全文を捏造せず、assignmentId、assignmentFile、returnToをそのまま送る。`waiting_connection` は未接続機能の報告に切り替える。
+5. 担当Botの結果は `finish` で保存されて初めて確定する。メッセージだけの「完了」は採用しない。再送は同じassignmentId。別の割当を増やさない。
+6. `blocked` が修正で解決できれば `revise <jobId> --step <stepId> --reason ...`。下流のQA・納品も無効化される。修正2回まで。入力不足・API不足はその理由を報告する。
+7. 次工程を同じ方法で進める。`ready_for_review` で成果物をユーザーへ添付・リンクして返す。`accept` はユーザーが完成内容を受け入れた後にだけ使う。納品準備は外部送信の証拠ではない。
+
+## 運用
+
+既存のフウ＝coordinator、リサーチ担当＝sales/research、コード担当＝creator、Agency QA＝qa、Agency Delivery＝delivery。実在するBot名が違えば `bot <role> --name ...` を更新する。このコマンド自体はBotを作成しない。
+
+`capability <id> --readiness ready --evidence ...` は対象Botで入出力を実際に検証した後に設定する。検証できないものはunverified／needs_connection。検索はGrokの利用可能ツールを使い、出典を記録する。23種類の仕事はcapabilities.jsonを参照し、担当ツールが足りない工程を飛ばさない。
+
+外部APIは後付け。営業送信・公開・購入は今回の稼働範囲外。停止指示は `pause`、再開は `resume`、取消は `cancel`。Routineは単発完走後、ユーザー指定の時刻・対象で登録する。静かな状態では通知せず、完成・失敗・判断必要時だけ報告する。
+
+
+---
+
+# File: docs/agentic-agency/grok-kit/agency-package/SKILL.md
+
+---
+name: agency-package
+description: Agency DeliveryがQAを通った成果物を納品ZIPと台帳にまとめ、Grok会話へ完成物を返す。
+---
+
+同じrepoとAGENCY_ROOTで `inspect <assignmentId>` を実行し、deliveryの割当であることと、上流QAの結果を確認する。
+
+`package <assignmentId>` は最新版の合格成果物をコピーし、SHA256・版番号付きmanifest.json、delivery.md、delivery.zipを作る。返されたartifact.idが納品ZIPのID。ZIPを実際に開き、同梱ファイルを依頼のdeliverablesと照合する。不足があれば成功とせずblockedを返す。
+
+result.jsonはStepResultに合わせ、割当のrequiredCheckIdsをPASSと確認根拠付きで記録する。artifactIdsにZIPのIDを含め、`finish <assignmentId> --result <result.json>` が成功したら司令塔へパスを返す。ユーザーが開ける添付をGrokの会話に返す。クラウド内のパスだけを外部公開URLとして扱わない。
+
+外部顧客への送信やWeb公開はこのSkillの実行に含めない。ユーザーの完成物確認は司令塔が扱う。
+
+
+---
+
+# File: docs/agentic-agency/grok-kit/agency-review/SKILL.md
+
+---
+name: agency-review
+description: Agency QAが最新版の成果物・出典を読み、依頼と工程の合格条件を検査して合格または修正を返す。
+---
+
+repoのCLIを共通AGENCY_ROOTで使う。`inspect <assignmentId>` で割当とhash検査を取得する。hashが一致しただけでは品質合格にしない。
+
+割当のinputArtifactsをすべて開き、仕様、計算、リンク、実績表現、出力形式を該当する仕事に合わせて確認する。調査では出典ページを再確認し、推測と事実を分ける。表計算は実際に開いて行数・項目・計算を検査する。アプリは実行と操作を確かめる。必要なツールがない場合はblockedとする。
+
+result.jsonはcontracts.schema.jsonのStepResult。工程条件は `criterion_1...`、依頼条件は `job_criterion_1...`。各検査のevidenceに、何を開き、何と照合し、何が一致したかを書く。さらに検査した各成果物に `artifactId` を付けたPASS/FAIL/NOT_CHECKEDチェックを最低1つ記録する。artifactIdsには検査対象のIDを入れる。全条件と全成果物が合格した場合だけsucceeded。修正箇所があればrevise、検査不能ならblocked。
+
+レビュー本文をreview.mdに保存し `artifact` で登録する。`finish <assignmentId> --result <file>` を実行し、司令塔へ結果を返す。QAが制作工程を書き換えて合格を装わない。修正は司令塔が新しいattemptを割り当てる。
+
+
+---
+
+# File: docs/agentic-agency/grok-kit/agency-work/SKILL.md
+
+---
+name: agency-work
+description: Grokの営業・調査・制作Botが割当ファイルを読み、実際の出典と成果物を台帳へ登録して司令塔へ戻す。
+---
+
+司令塔から受け取ったassignmentIdとassignmentFileを使う。repoを作業ディレクトリ、AGENCY_ROOTを司令塔と同じ値にする。
+
+1. `python -m agency_runtime inspect <assignmentId>`。割当のstep.instructions、briefFile、inputArtifacts、acceptanceCriteriaを読む。入力ファイルのhash違い、取消・古い割当は処理を止めて報告する。
+2. 調査は利用可能なGrokの検索・ブラウザで実際にページを読む。`source <assignmentId> --url ... --title ... --excerpt-file <読んだ箇所.txt>` で出典を保存。登録済みURLでも内容の正確さはQAが確認する。本文中のリンクとsourceIdsを対応させる。
+3. 文章・コード・資料などはoutputDir内に実ファイルを作成。未接続ツールで画像や動画を生成したと主張しない。`artifact <assignmentId> --file <file>` の返したidを記録する。登録ファイルは不変なので変更は新しいattemptで行う。
+4. 既存のデータ処理は `run <assignmentId> --payload <payload.json>`。対象はcontract_extract／leads_clean／invoice_extract。契約はcsv_text＋month、営業候補はdata（Places形式JSON）＋sample、請求書はdocuments（name＋lines）＋today。請求書のPDF抽出／OCRはGrokで実際に行うか接続待ちにし、抽出したテキストの出所を保存する。CLI自体はOCRも検索も実行しない。
+5. 実際に各合格条件を確認しresult.jsonを作成する。kind=step_result、stepId、outcome、summary、artifactIds、sourceIds、checks、blockersを含む。チェックIDは `criterion_1` から順に割当のrequiredCheckIdsに合わせ、evidenceに確認内容と数値を書く。未確認はNOT_CHECKED、失敗はFAIL。未完了をsucceededにしない。
+6. `finish <assignmentId> --result <result.json>` が成功したらreturnToへassignmentId、工程結果、成果物とresult.jsonのパスをGrok Bot内メッセージで返す。コマンドが拒否した結果を完了報告しない。

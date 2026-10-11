@@ -1,0 +1,4 @@
+# Python 3.11+; reuses the checked-in processing engines.
+jsonschema==4.26.0
+openpyxl==3.1.5
+python-dateutil==2.9.0.post0
