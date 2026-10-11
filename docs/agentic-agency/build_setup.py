@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 FILES = ['START-HERE.md', 'README.md', 'architecture.md', 'agent-instructions.md',
          'connections.md', 'implementation-backlog.md', 'contracts.schema.json',
-         'capabilities.json', 'company-policy.example.json', 'example-job.json', 'runtime-status.md']
+         'capabilities.json', 'company-policy.example.json', 'example-job.json', 'runtime-status.md', 'RESUME-IN-GROK.md']
 
 
 def build():

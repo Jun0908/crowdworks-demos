@@ -54,7 +54,7 @@ Bot registration and runtime evidence are recorded separately in runtime-status.
 
 # Agentic Agency — Grok Bot内で動く受託チーム
 
-実装仕様 v1 / 2026-10-11。実行環境は **Grok Bot内の司令塔Botと専門Bot**。[共有案件CLI](../../agency_runtime/README.md)と[Grok用Skill](grok-kit/agency-orchestrate/SKILL.md)を実装済み。Grokで既存3 Botと新規QA・Deliveryの導入を開始し、初回の調査案件を進めている。[実装と稼働状況](runtime-status.md)を参照する。
+実装仕様 v1 / 2026-10-11。実行環境は **Grok Bot内の司令塔Botと専門Bot**。[共有案件CLI](../../agency_runtime/README.md)と[Grok用Skill](grok-kit/agency-orchestrate/SKILL.md)を実装済み。Grokで5 Botを用意し、初回の調査・提案制作まで進んだ。その後、使用量上限で停止した。[稼働状況](runtime-status.md)と[再開指示](RESUME-IN-GROK.md)を参照する。
 
 ## プロダクト
 
@@ -251,7 +251,7 @@ CLIの割当IDにはjobIdも含めて案件間の衝突を防ぐ。nextの再送
 
 `capabilities.json` は仕事内容の設計カタログ。導入後のconfigには `readiness=unverified/ready/needs_connection/unavailable` とlastCheckedAt、testEvidenceを追記する。利用可能なツールで実物を作って確認した仕事だけreadyにする。
 
-3つの既存処理はMakerがGrokのコンピュータでPython CLIを実行できれば再利用できる。リポジトリへのアクセスと依存環境を確認する。私有リポジトリのため、URLだけでcloneできるとは仮定しない。
+3つの既存処理はMakerがGrokのコンピュータでPython CLIを実行できれば再利用できる。2026-10-11にGitHubのPUBLIC表示を確認し、Grokもクラウド側へソースを取得したと報告している。実行環境と依存関係は導入時に確認する。
 
 | 機能 | ソース | 完成確認 |
 |---|---|---|
@@ -606,9 +606,9 @@ Grok Botの会話、担当Botへの依頼、通常のファイル制作を出発
     {"id":"outreach_draft","category":"sales","title":"営業・フォロー文面","status":"planned","inputs":["recipient_context","verified_facts","desired_action"],"outputs":["message_draft.md"],"requires":["text_generation","artifact_store"]},
     {"id":"article_draft","category":"content","title":"記事初稿","status":"planned","inputs":["audience","topic","outline","sources"],"outputs":["article.md"],"requires":["text_generation","artifact_store"]},
     {"id":"faq_draft","category":"content","title":"FAQ・業務手順書","status":"planned","inputs":["source_documents","audience"],"outputs":["faq.md"],"requires":["text_generation","artifact_store"]},
-    {"id":"leads_clean","category":"data","title":"営業リスト整理","status":"adapter_pending","inputs":["places_json","areas","classification_options"],"outputs":["leads.csv","excluded.csv","leads.xlsx"],"requires":["python_runner","leads_adapter"],"existingSource":"2_焼肉店営業リスト/"},
-    {"id":"contract_extract","category":"data","title":"契約更新抽出","status":"adapter_pending","inputs":["staff_csv","target_month","date_convention"],"outputs":["renewals.csv","renewals.xlsx","messages.zip"],"requires":["python_runner","contract_adapter"],"existingSource":"3_契約更新抽出/"},
-    {"id":"invoice_extract","category":"data","title":"請求書抽出","status":"adapter_pending","inputs":["pdf_files","reference_date"],"outputs":["invoices.xlsx","extracted.json","review_notes.md"],"requires":["python_runner","pdf_ocr","invoice_adapter"],"existingSource":"1_請求書読み取り/"},
+    {"id":"leads_clean","category":"data","title":"営業リスト整理","status":"implemented_local_adapter","inputs":["places_json","areas","classification_options"],"outputs":["leads.csv","excluded.csv","leads.xlsx"],"requires":["python_runner","leads_adapter"],"existingSource":"2_焼肉店営業リスト/"},
+    {"id":"contract_extract","category":"data","title":"契約更新抽出","status":"implemented_local_adapter","inputs":["staff_csv","target_month","date_convention"],"outputs":["renewals.csv","renewals.xlsx","messages.zip"],"requires":["python_runner","contract_adapter"],"existingSource":"3_契約更新抽出/"},
+    {"id":"invoice_extract","category":"data","title":"請求書抽出","status":"implemented_local_adapter","inputs":["pdf_files","reference_date"],"outputs":["invoices.xlsx","extracted.json","review_notes.md"],"requires":["python_runner","pdf_ocr","invoice_adapter"],"existingSource":"1_請求書読み取り/"},
     {"id":"artifact_review","category":"quality","title":"品質確認","status":"planned","inputs":["requirements","artifacts","sources","machine_checks"],"outputs":["review.json"],"requires":["text_generation","artifact_read","validators"]},
     {"id":"delivery_package","category":"delivery","title":"納品パッケージ作成","status":"planned","inputs":["validated_artifacts"],"outputs":["delivery.md","manifest.json"],"requires":["artifact_store","manifest_writer"]},
     {"id":"website_build","category":"development","title":"Webサイト制作","status":"planned","inputs":["requirements","assets","copy"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
@@ -704,10 +704,40 @@ Grok Botデスクトップのフウとの会話で実装指示を送り、次を
 - 15:02、フウが設定ファイルの保存、4担当とのACK往復、共有pingファイルの読み取り確認を報告。
 - Agency QAの会話プレビューにもping tokenと担当登録の確認が表示された。
 - フウがリサーチ担当へ最初の飲食店向け業務改善調査を割り当てた。
+- 15:07、フウが調査メモ完成と27出典の確認を報告。15:11、proposal.md完成とAgency QAへの引き継ぎを報告。
+- フウがクラウドの `/workspace/agentic-agency/src/crowdworks-demos` にCLIを含むソースを取得し、c034136へ更新したと報告。
 
-これらはGrokのUIとBot報告に基づく。クラウドのファイル内容・成果物・QAをローカルテストで代替しない。GrokでのCLI導入と案件完走の結果は、取得できた実物と報告に基づき追記する。
+## 現在の停止理由と残作業
+
+GrokのUIに「使用量の上限に達しました」「Upgrade to a paid plan to use more Grok Bot.」が表示され、状態は「フウは返信せずに停止しました」。有料プランへの変更・購入は行っていない。
+
+QAの合格、納品ファイル、クラウドでのCLIテスト、4 Skillのネイティブ登録、CLI版案件の完走は未確認。ローカルの52テストをそれらの代わりにしない。利用枠が利用可能になった後の[再開指示](RESUME-IN-GROK.md)を保存した。
+
+これらはGrokのUIとBot報告に基づく。クラウドの成果物本体は取得できていない。再開後のCLI導入と案件完走の結果は、取得できた実物と報告に基づき追記する。
 
 Routineはまだ有効化していない。外部API接続と実行時刻・対象は今後設定する。
+
+
+---
+
+# File: docs/agentic-agency/RESUME-IN-GROK.md
+
+# 使用量上限が解消した後の再開指示
+
+Grok Botの「フウ」に以下を送る。これは再開用の指示であり、再開済みの証跡ではない。2026-10-11、調査と提案書の作成が報告された後、Grokの使用量上限で停止した。APIキーの入力やローカルテストを、Grokの利用枠の回復とは扱わない。
+
+---
+
+Agentic Agencyの実装を保存済みの状態から再開してください。GitHub `Jun0908/crowdworks-demos` のmainを取得し、まず `docs/agentic-agency/runtime-status.md` と `agency_runtime/README.md` を読んでください。既存のフウ・リサーチ担当・コード担当・Agency QA・Agency Deliveryを再利用し、重複作成しないでください。
+
+1. `/workspace/agentic-agency/` にある既存案件のstate・plan・assignments・resultと実ファイルを照合してください。research.mdとproposal.mdの作成までは報告済みです。Agency QAの保存済み結果があれば検証し、未完了なら同じassignmentIdで進捗を確認してください。調査や提案書を最初から二重制作しないでください。
+2. QAの出典確認・検査が終わったらAgency Deliveryへ納品準備を引き継ぎ、実際の調査メモ・提案書・QAと納品一式を会話へ添付してください。検査できていない内容を合格にしないでください。
+3. クラウドのrepoで依存関係を導入し、`AGENCY_ROOT=/workspace/agentic-agency/runtime-v1` を全Botに共通設定してください。既存config/jobsを上書きせず、`python -m agency_runtime bootstrap --kit-out /workspace/agentic-agency/cli-skills` を実行してください。pytestがなければ検証用に導入し、`python -m pytest agency_runtime/tests web/tests -q` の実際の結果を保存してください。ローカルでは52テスト成功しています。
+4. grok-kitのorchestrate・work・review・packageをGrokのSkillとして実際に保存し、担当Botへ割り当ててください。フォルダーへコピーしただけで登録済みとしないでください。
+5. 元の案件の納品準備後、新しいCLI台帳に契約更新のsample案件を1件作り、Creator→QA→DeliveryをBot間メッセージで進めてください。対応能力は実検証後にreadyへ更新し、runの再送が同じ成果物を返すことと納品ZIPまで確認してください。
+6. 実際のBot名、Skill参照、jobId、実行ログ、成果物、残る未接続機能を報告してください。個人情報・鍵・実顧客情報を含まない証跡が保存可能なら、この会話へ添付してください。
+
+Grokの共有コンピュータで作業し、WindowsのローカルPCをターミナル操作しないでください。チーム内部の依頼と返答は許可済みです。外部営業送信・購入・公開とRoutine有効化は今回の再開に含めません。止まった箇所だけを具体的に報告し、それ以外の実装・検証は進めてください。
 
 
 ---

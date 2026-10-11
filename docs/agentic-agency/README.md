@@ -1,6 +1,6 @@
 # Agentic Agency — Grok Bot内で動く受託チーム
 
-実装仕様 v1 / 2026-10-11。実行環境は **Grok Bot内の司令塔Botと専門Bot**。[共有案件CLI](../../agency_runtime/README.md)と[Grok用Skill](grok-kit/agency-orchestrate/SKILL.md)を実装済み。Grokで既存3 Botと新規QA・Deliveryの導入を開始し、初回の調査案件を進めている。[実装と稼働状況](runtime-status.md)を参照する。
+実装仕様 v1 / 2026-10-11。実行環境は **Grok Bot内の司令塔Botと専門Bot**。[共有案件CLI](../../agency_runtime/README.md)と[Grok用Skill](grok-kit/agency-orchestrate/SKILL.md)を実装済み。Grokで5 Botを用意し、初回の調査・提案制作まで進んだ。その後、使用量上限で停止した。[稼働状況](runtime-status.md)と[再開指示](RESUME-IN-GROK.md)を参照する。
 
 ## プロダクト
 

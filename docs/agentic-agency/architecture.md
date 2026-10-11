@@ -99,7 +99,7 @@ CLIの割当IDにはjobIdも含めて案件間の衝突を防ぐ。nextの再送
 
 `capabilities.json` は仕事内容の設計カタログ。導入後のconfigには `readiness=unverified/ready/needs_connection/unavailable` とlastCheckedAt、testEvidenceを追記する。利用可能なツールで実物を作って確認した仕事だけreadyにする。
 
-3つの既存処理はMakerがGrokのコンピュータでPython CLIを実行できれば再利用できる。リポジトリへのアクセスと依存環境を確認する。私有リポジトリのため、URLだけでcloneできるとは仮定しない。
+3つの既存処理はMakerがGrokのコンピュータでPython CLIを実行できれば再利用できる。2026-10-11にGitHubのPUBLIC表示を確認し、Grokもクラウド側へソースを取得したと報告している。実行環境と依存関係は導入時に確認する。
 
 | 機能 | ソース | 完成確認 |
 |---|---|---|
