@@ -1,0 +1,46 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0006",
+      "displayName": {
+        "text": "【架空】炭火焼肉 架空園 昭島店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市テスト6-6",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000006",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0006",
+      "rating": 4.1,
+      "userRatingCount": 150
+    },
+    {
+      "id": "MOCK_PLACE_0007",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル苑 昭島",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市ダミー7-7",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000007",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "CLOSED_PERMANENTLY",
+      "nationalPhoneNumber": "042-000-0007",
+      "rating": 3.8,
+      "userRatingCount": 30
+    }
+  ]
+}

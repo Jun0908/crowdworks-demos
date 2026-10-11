@@ -1,0 +1,85 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0008",
+      "displayName": {
+        "text": "【架空】焼肉 ダミー亭 所沢本店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル8-8",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000008",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0008",
+      "rating": 4.0,
+      "userRatingCount": 300,
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭の香りがして最高（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭の香りがして最高（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MOCK_PLACE_0009",
+      "displayName": {
+        "text": "【架空】炭焼き焼肉 テスト所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト9-9",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000009",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0009",
+      "rating": 4.3,
+      "userRatingCount": 95
+    },
+    {
+      "id": "MOCK_PLACE_0010",
+      "displayName": {
+        "text": "【架空】焼肉 モック苑 所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市モック10-10",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000010",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0010",
+      "rating": 3.6,
+      "userRatingCount": 12
+    }
+  ],
+  "nextPageToken": "MOCK_TOKEN_TOKO_P2"
+}

@@ -1,0 +1,79 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0005",
+      "displayName": {
+        "text": "【架空】七輪焼肉 モック家",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒205-0000 東京都羽村市サンプル5-5",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000005",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0005",
+      "rating": 4.4,
+      "userRatingCount": 88
+    },
+    {
+      "id": "MOCK_PLACE_0001",
+      "displayName": {
+        "text": "【架空】炭火焼肉 サンプル亭 青梅店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市サンプル町1-1-1",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000001",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0001",
+      "rating": 4.2,
+      "userRatingCount": 123,
+      "websiteUri": "https://example.com/sample-tei",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ]
+    }
+  ]
+}

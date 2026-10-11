@@ -1,0 +1,62 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0011",
+      "displayName": {
+        "text": "【架空】韓国焼肉 サンプル",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市ダミー11-11",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000011",
+      "types": [
+        "korean_restaurant",
+        "restaurant"
+      ],
+      "primaryType": "korean_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0011",
+      "rating": 4.1,
+      "userRatingCount": 77,
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "サムギョプサルが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "サムギョプサルが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MOCK_PLACE_0012",
+      "displayName": {
+        "text": "【架空】炭火焼肉 所沢サンプル館",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル12-12",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000012",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0012",
+      "rating": 4.5,
+      "userRatingCount": 410,
+      "websiteUri": "https://example.com/tokorozawa-sample"
+    }
+  ],
+  "nextPageToken": "MOCK_TOKEN_TOKO_P3"
+}

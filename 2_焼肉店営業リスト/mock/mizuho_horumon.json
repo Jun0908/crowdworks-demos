@@ -1,0 +1,29 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0003",
+      "displayName": {
+        "text": "【架空】ホルモン サンプル横丁",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒190-1200 東京都西多摩郡瑞穂町ダミー3-3",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000003",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0003",
+      "rating": 4.0,
+      "userRatingCount": 67,
+      "editorialSummary": {
+        "text": "炭火で焼くホルモンが名物の大衆店（架空）",
+        "languageCode": "ja"
+      }
+    }
+  ]
+}

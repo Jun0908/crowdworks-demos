@@ -1,0 +1,31 @@
+{
+  "mode": "mock",
+  "requests": {
+    "searchText": 34,
+    "details": 0
+  },
+  "raw_results": 26,
+  "after_place_id_dedupe": 19,
+  "after_name_phone_address_dedupe": 18,
+  "excluded": {
+    "対象エリア外": 2,
+    "焼肉関連性なし": 1,
+    "閉業": 1
+  },
+  "final_rows": 14,
+  "judgement": {
+    "確定": 7,
+    "可能性": 2,
+    "不明": 5
+  },
+  "by_area": {
+    "青梅": 2,
+    "瑞穂": 1,
+    "福生": 1,
+    "羽村": 1,
+    "昭島": 1,
+    "所沢": 6,
+    "飯能": 1,
+    "入間": 1
+  }
+}

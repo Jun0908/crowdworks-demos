@@ -1,0 +1,24 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0013",
+      "displayName": {
+        "text": "【架空】焼肉 テスト庵 所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト13-13",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000013",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "rating": 3.2,
+      "userRatingCount": 5
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "file": "INV_A_tsubame_tsushin.pdf",
+    "method": "text",
+    "invoice_date": "2026-10-01",
+    "total": 37620,
+    "vendor": "株式会社つばめ架空通信",
+    "bank": {
+      "bank": "架空みなと銀行",
+      "branch": "さくら通支店",
+      "type": "普通",
+      "number": "1234567",
+      "holder": "カ)ツバメカクウツウシン"
+    },
+    "due_date": "2026-10-15",
+    "category": "通信費",
+    "items": [
+      "光回線インターネット利用料(9月分)",
+      "固定IP オプション",
+      "クラウドPBX 電話回線 5ID"
+    ],
+    "notes": [],
+    "needs_review": false,
+    "debug": {
+      "issue_src": "ラベル「請求日」",
+      "due_src": "ラベル「お支払期限」",
+      "amount_src": "ご?請求(金)?額",
+      "amount_check": true,
+      "category_detail": "通信費:4"
+    }
+  },
+  {
+    "file": "INV_B_himawari_kokoku.pdf",
+    "method": "text",
+    "invoice_date": "2026-10-05",
+    "total": 110000,
+    "vendor": "合同会社ひまわり架空広告",
+    "bank": {
+      "bank": "ひかり架空信用金庫",
+      "branch": "梅田支店",
+      "type": "当座",
+      "number": "0076543",
+      "holder": "ゴウ)ヒマワリカクウコウコク"
+    },
+    "due_date": "2026-10-31",
+    "category": "広告宣伝費",
+    "items": [
+      "SNS広告運用代行(10月)",
+      "リスティング広告出稿費立替分"
+    ],
+    "notes": [],
+    "needs_review": false,
+    "debug": {
+      "issue_src": "ラベル「発行日」",
+      "due_src": "ラベル「お支払期日」",
+      "amount_src": "(税込\\s*合計|合計\\s*金額|総合計|総額|合計\\s*\\(税込\\))",
+      "amount_check": true,
+      "category_detail": "広告宣伝費:5, 外注費:1"
+    }
+  },
+  {
+    "file": "INV_C_aoi_design_scan.pdf",
+    "method": "OCR(tesseract jpn psm6, deskew -1.25°)",
+    "invoice_date": "2026-09-30",
+    "total": 199580,
+    "vendor": "あおい架空デザイン事務所",
+    "bank": {
+      "bank": "架空ゆめ銀行",
+      "branch": "デモ支店",
+      "type": "普通",
+      "number": "7654321",
+      "holder": "アオイカクウデザインカクウタロウ"
+    },
+    "due_date": "2026-10-01",
+    "category": "外注費",
+    "items": [],
+    "notes": [
+      "金額の整合性チェック不可",
+      "源泉徴収あり",
+      "請求日はラベルなし推定",
+      "OCR読取: 目視確認推奨"
+    ],
+    "needs_review": true,
+    "debug": {
+      "issue_src": "ラベルなし(先頭付近の日付)",
+      "due_src": "ラベル「振込期限」",
+      "amount_src": "差引\\s*ご?請求(金)?額",
+      "amount_check": null,
+      "category_detail": "外注費:7"
+    }
+  },
+  {
+    "file": "INV_D_kamome_fudosan_scan.pdf",
+    "method": "OCR(tesseract jpn psm6, deskew +2.00°)",
+    "invoice_date": "2026-09-25",
+    "total": 236500,
+    "vendor": "株式会社かもめ梨空不動産",
+    "bank": {
+      "bank": "架空はまなす銀行",
+      "branch": "横浜西支店",
+      "type": "普通",
+      "number": "3141592",
+      "holder": "カ) カモメカクウフドウサン"
+    },
+    "due_date": "2026-10-16",
+    "category": "地代家賃",
+    "items": [],
+    "notes": [
+      "OCR読取: 目視確認推奨"
+    ],
+    "needs_review": true,
+    "debug": {
+      "issue_src": "ラベル「発行日」",
+      "due_src": "ラベル「支払期日」",
+      "amount_src": "(税込\\s*合計|合計\\s*金額|総合計|総額|合計\\s*\\(税込\\))",
+      "amount_check": true,
+      "category_detail": "地代家賃:4"
+    }
+  },
+  {
+    "file": "INV_E_kobato_bungu.pdf",
+    "method": "text",
+    "invoice_date": "2026-10-08",
+    "total": 40370,
+    "vendor": "有限会社こばと架空文具",
+    "bank": {
+      "bank": "架空ふくおか銀行",
+      "branch": "天神中央支店",
+      "type": "普通",
+      "number": "2718281",
+      "holder": "ユ)コバトカクウブング"
+    },
+    "due_date": "2026-11-20",
+    "category": "消耗品費",
+    "items": [
+      "コピー用紙 A4 5000枚",
+      "トナーカートリッジ黒",
+      "ボールペン・付箋文房具セット"
+    ],
+    "notes": [
+      "請求日はラベルなし推定"
+    ],
+    "needs_review": false,
+    "debug": {
+      "issue_src": "ラベルなし(先頭付近の日付)",
+      "due_src": "「…まで」表現",
+      "amount_src": "お?支払(い)?(総|金)?額",
+      "amount_check": true,
+      "category_detail": "消耗品費:6"
+    }
+  }
+]

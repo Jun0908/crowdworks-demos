@@ -1,0 +1,22 @@
+{
+  "_note": "【架空データ】すべての店舗・住所・電話番号・URLは架空です。実在しません。",
+  "queries": {
+    "炭火焼肉 青梅市": "ome_sumibi.json",
+    "焼肉 青梅市": "ome_yakiniku.json",
+    "ホルモン 瑞穂町": "mizuho_horumon.json",
+    "焼肉 福生市": "fussa_yakiniku.json",
+    "焼肉 羽村市": "hamura_yakiniku.json",
+    "七輪 焼肉 羽村市": "hamura_shichirin.json",
+    "炭火焼肉 昭島市": "akishima_sumibi.json",
+    "焼肉 昭島市": "akishima_yakiniku.json",
+    "焼肉 所沢市": "tokorozawa_yakiniku_p1.json",
+    "炭火焼肉 所沢市": "tokorozawa_sumibi.json",
+    "炭火焼肉 飯能市": "hanno_sumibi.json",
+    "焼肉 入間市": "iruma_yakiniku.json"
+  },
+  "pages": {
+    "MOCK_TOKEN_TOKO_P2": "tokorozawa_yakiniku_p2.json",
+    "MOCK_TOKEN_TOKO_P3": "tokorozawa_yakiniku_p3.json"
+  },
+  "details": {}
+}

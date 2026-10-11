@@ -1,0 +1,47 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0009",
+      "displayName": {
+        "text": "【架空】炭焼き焼肉 テスト所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト9-9",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000009",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0009",
+      "rating": 4.3,
+      "userRatingCount": 95
+    },
+    {
+      "id": "MOCK_PLACE_0012",
+      "displayName": {
+        "text": "【架空】炭火焼肉 所沢サンプル館",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル12-12",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000012",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0012",
+      "rating": 4.5,
+      "userRatingCount": 410,
+      "websiteUri": "https://example.com/tokorozawa-sample"
+    }
+  ]
+}

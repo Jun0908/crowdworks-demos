@@ -1,0 +1,58 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0004",
+      "displayName": {
+        "text": "【架空】焼肉 ダミー館 福生店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒197-0000 東京都福生市モック4-4",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000004",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0004",
+      "rating": 3.5,
+      "userRatingCount": 210,
+      "websiteUri": "https://example.com/dummy-kan",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "無煙ロースターで服が臭くならない（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "無煙ロースターで服が臭くならない（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "ガス火なので炭火の香りはない（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "ガス火なので炭火の香りはない（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ]
+    }
+  ]
+}

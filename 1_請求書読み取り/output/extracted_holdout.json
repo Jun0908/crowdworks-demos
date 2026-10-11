@@ -1,0 +1,69 @@
+[
+  {
+    "file": "HOLD_1_hoshizora_lab.pdf",
+    "method": "text",
+    "invoice_date": "2026-10-02",
+    "total": null,
+    "vendor": null,
+    "bank": {
+      "bank": "ゆうちょ銀行",
+      "type": "普通",
+      "number": "1234567",
+      "holder": "ホシゾラカクウラボカクウハナコ"
+    },
+    "due_date": null,
+    "category": "要確認",
+    "items": [
+      "システム保守サポート月額(10月)",
+      "サーバー監視オプション",
+      "Subtotal",
+      "Tax(10%)",
+      "Total Amount (tax incl.) JPY",
+      "支払締切日:R8.11.30",
+      "Bank: ゆうちょ銀行 〇一八店普通"
+    ],
+    "notes": [
+      "未取得: 金額/取引先/支払期日",
+      "振込先の一部未取得: branch",
+      "勘定科目要確認(キーワード該当なし)"
+    ],
+    "needs_review": true,
+    "debug": {
+      "issue_src": "ラベル「date」",
+      "due_src": null,
+      "amount_src": null,
+      "amount_check": null,
+      "category_detail": "キーワード該当なし"
+    }
+  },
+  {
+    "file": "HOLD_2_renge_travel_scan.pdf",
+    "method": "OCR(tesseract jpn, deskew -0.75°)",
+    "invoice_date": null,
+    "total": null,
+    "vendor": null,
+    "bank": {
+      "bank": "梨空れんば銀行",
+      "branch": "本店営業部",
+      "type": "普通",
+      "number": "1112223",
+      "holder": "カ) レンダカクウトラベル"
+    },
+    "due_date": null,
+    "category": "要確認",
+    "items": [],
+    "notes": [
+      "未取得: 請求日/金額/取引先/支払期日",
+      "勘定科目要確認(キーワード該当なし)",
+      "OCR読取: 目視確認推奨"
+    ],
+    "needs_review": true,
+    "debug": {
+      "issue_src": null,
+      "due_src": null,
+      "amount_src": null,
+      "amount_check": null,
+      "category_detail": "キーワード該当なし"
+    }
+  }
+]

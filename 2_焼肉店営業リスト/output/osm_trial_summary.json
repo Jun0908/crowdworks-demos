@@ -1,0 +1,35 @@
+{
+  "total": 50,
+  "with_phone": 4,
+  "with_website": 5,
+  "with_address": 6,
+  "unnamed": 1,
+  "by_area": {
+    "青梅": 6,
+    "瑞穂": 0,
+    "福生": 6,
+    "羽村": 7,
+    "昭島": 7,
+    "所沢": 16,
+    "飯能": 0,
+    "入間": 8
+  },
+  "log": [
+    "青梅: 6件",
+    "瑞穂: 失敗 504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter",
+    "福生: 6件",
+    "羽村: 7件",
+    "昭島: 7件",
+    "所沢: 16件",
+    "飯能: 0件",
+    "入間: 8件"
+  ],
+  "attribution": "© OpenStreetMap contributors (ODbL)",
+  "yakiniku_flag": {
+    "○": 25,
+    "△": 20,
+    "×": 5
+  },
+  "charcoal_confirmed_yakiniku": 2,
+  "charcoal_but_not_yakiniku": 5
+}

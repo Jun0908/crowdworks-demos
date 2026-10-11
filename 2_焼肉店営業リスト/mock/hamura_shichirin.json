@@ -1,0 +1,25 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0005",
+      "displayName": {
+        "text": "【架空】七輪焼肉 モック家",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒205-0000 東京都羽村市サンプル5-5",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000005",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0005",
+      "rating": 4.4,
+      "userRatingCount": 88
+    }
+  ]
+}

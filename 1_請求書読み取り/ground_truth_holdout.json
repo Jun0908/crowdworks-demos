@@ -1,0 +1,32 @@
+{
+  "HOLD_1_hoshizora_lab.pdf": {
+    "invoice_date": "2026-10-02",
+    "total": 52800,
+    "vendor": "ほしぞら架空ラボ",
+    "bank": {
+      "bank": "ゆうちょ銀行",
+      "branch": "〇一八店",
+      "type": "普通",
+      "number": "1234567",
+      "holder": "ホシゾラカクウラボ カクウ ハナコ"
+    },
+    "due_date": "2026-11-30",
+    "category": "外注費",
+    "layout": "text"
+  },
+  "HOLD_2_renge_travel_scan.pdf": {
+    "invoice_date": "2026-10-06",
+    "total": 88000,
+    "vendor": "株式会社れんげ架空トラベル",
+    "bank": {
+      "bank": "架空れんげ銀行",
+      "branch": "本店営業部",
+      "type": "普通",
+      "number": "1112223",
+      "holder": "カ）レンゲカクウトラベル"
+    },
+    "due_date": "2026-10-13",
+    "category": "旅費交通費",
+    "layout": "scan"
+  }
+}

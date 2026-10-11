@@ -1,0 +1,77 @@
+{
+  "INV_A_tsubame_tsushin.pdf": {
+    "invoice_date": "2026-10-01",
+    "total": 37620,
+    "vendor": "株式会社つばめ架空通信",
+    "bank": {
+      "bank": "架空みなと銀行",
+      "branch": "さくら通支店",
+      "type": "普通",
+      "number": "1234567",
+      "holder": "カ）ツバメカクウツウシン"
+    },
+    "due_date": "2026-10-15",
+    "category": "通信費",
+    "layout": "text"
+  },
+  "INV_B_himawari_kokoku.pdf": {
+    "invoice_date": "2026-10-05",
+    "total": 110000,
+    "vendor": "合同会社ひまわり架空広告",
+    "bank": {
+      "bank": "ひかり架空信用金庫",
+      "branch": "梅田支店",
+      "type": "当座",
+      "number": "0076543",
+      "holder": "ゴウ）ヒマワリカクウコウコク"
+    },
+    "due_date": "2026-10-31",
+    "category": "広告宣伝費",
+    "layout": "text"
+  },
+  "INV_C_aoi_design_scan.pdf": {
+    "invoice_date": "2026-09-30",
+    "total": 199580,
+    "vendor": "あおい架空デザイン事務所",
+    "bank": {
+      "bank": "架空ゆめ銀行",
+      "branch": "デモ支店",
+      "type": "普通",
+      "number": "7654321",
+      "holder": "アオイカクウデザイン カクウ タロウ"
+    },
+    "due_date": "2026-10-10",
+    "category": "外注費",
+    "layout": "scan"
+  },
+  "INV_D_kamome_fudosan_scan.pdf": {
+    "invoice_date": "2026-09-25",
+    "total": 236500,
+    "vendor": "株式会社かもめ架空不動産",
+    "bank": {
+      "bank": "架空はまなす銀行",
+      "branch": "横浜西支店",
+      "type": "普通",
+      "number": "3141592",
+      "holder": "カ）カモメカクウフドウサン"
+    },
+    "due_date": "2026-10-16",
+    "category": "地代家賃",
+    "layout": "scan"
+  },
+  "INV_E_kobato_bungu.pdf": {
+    "invoice_date": "2026-10-08",
+    "total": 40370,
+    "vendor": "有限会社こばと架空文具",
+    "bank": {
+      "bank": "架空ふくおか銀行",
+      "branch": "天神中央支店",
+      "type": "普通",
+      "number": "2718281",
+      "holder": "ユ）コバトカクウブング"
+    },
+    "due_date": "2026-11-20",
+    "category": "消耗品費",
+    "layout": "text"
+  }
+}

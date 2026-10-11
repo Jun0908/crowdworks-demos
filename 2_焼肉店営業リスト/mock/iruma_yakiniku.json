@@ -1,0 +1,88 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0015",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル食堂 入間",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒358-0000 埼玉県入間市ダミー15-15",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000015",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0015",
+      "rating": 3.7,
+      "userRatingCount": 20
+    },
+    {
+      "id": "MOCK_PLACE_0016",
+      "displayName": {
+        "text": "【架空】炭火焼肉 圏外亭 狭山",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒350-1300 埼玉県狭山市圏外16-16",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000016",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0016",
+      "rating": 4.0,
+      "userRatingCount": 40
+    },
+    {
+      "id": "MOCK_PLACE_0017",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル 三芳",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒354-0000 埼玉県入間郡三芳町ダミー17-17",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000017",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "049-000-0017",
+      "rating": 3.9,
+      "userRatingCount": 22
+    },
+    {
+      "id": "MOCK_PLACE_0014",
+      "displayName": {
+        "text": "【架空】備長炭焼肉 テスト家 飯能",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒357-0000 埼玉県飯能市サンプル14-14",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000014",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0014",
+      "rating": 4.6,
+      "userRatingCount": 58
+    }
+  ]
+}
