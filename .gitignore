@@ -12,6 +12,7 @@ __pycache__/
 /.sites-work/
 /web/test-results/
 /web/node_modules/
+.vercel/
 
 # Local credentials and environment configuration
 .env

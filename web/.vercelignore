@@ -1,0 +1,9 @@
+node_modules
+test-results
+tests
+.openai
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+preview.png
