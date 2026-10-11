@@ -51,6 +51,7 @@ Windowsのローカル台帳で検証する例：
 
 ```powershell
 python -m agency_runtime --root .demo-output/agency-check init
+python -m pip install pytest
 python -m pytest agency_runtime/tests web/tests -q
 ```
 

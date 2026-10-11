@@ -8,9 +8,11 @@ Grok Botの既存機能を実行基盤として使う。Directorが所有者、�
 
 各Botは同じクラウドコンピュータと認証情報を共有する。別のBot名は権限分離ではない。今回のローカルWindowsのパスはGrok Botから直接見えるものとせず、必要なソース・入力をGrok側へ渡す。[コンピュータとアプリ](https://docs.x.ai/grok-bot/computer-and-apps)
 
-## 2. ファイルを正本にする
+## 2. 共有台帳とファイル
 
 ルート：`/workspace/agentic-agency/`。セットアップ時にこの場所が使えることを確認する。
+
+実装済みのCLIは既存の手書きファイルを保護するため、別ルート `/workspace/agentic-agency/runtime-v1/` に導入する。`ledger.sqlite3` を状態の正本とし、下記のJSON、events、boardをそこから生成する。BotはCLIを使って更新し、生成済みJSONを直接編集しない。OSのファイルロックとSQLiteトランザクションで二重割当を防ぐ。実行手順は [ランタイムREADME](../../agency_runtime/README.md)。
 
 ```text
 agentic-agency/
@@ -41,7 +43,7 @@ agentic-agency/
 
 重要な完成物は会話にも添付する。共有フォルダーだけを唯一のバックアップと考えない。通常の更新で保持される設計でも、復旧・リセットでは直近作業の喪失があり得る。[ファイルと成果物](https://docs.x.ai/grok-bot/files-and-results)
 
-`state.json`、候補index、boardはDirectorだけが更新する。専門Botは専用attemptフォルダーに結果を書き、結果パスをDirectorへ返す。同一ファイルを複数Botが同時編集しない。
+DirectorはCLIで割当と状態制御を行う。専門Botは専用attemptフォルダーに成果物を作り、CLIのartifact/source/finishで登録して結果パスをDirectorへ返す。state、候補index、boardの生成はCLIに任せる。同一ファイルを複数Botが同時編集しない。
 
 ## 3. 割り当てメッセージ
 
@@ -66,10 +68,14 @@ Directorが次を保存してから担当へ送る。本文だけでなく `assi
 
 重複ASSIGNを受信したら、同じassignmentIdの作業中・結果ファイルを確認して既存結果を返す。未完了なら進捗を返し、別の作業を立ち上げない。Directorも同じ結果を二度取り込まない。Botの言語指示だけでは厳密なexactly-onceを保証できないため、初版は1案件・1アクティブ割当を既定値とし、再開時は実ファイルを照合する。
 
+CLIの割当IDにはjobIdも含めて案件間の衝突を防ぐ。nextの再送は同じアクティブ割当、finishの同じ結果は既存確定結果を返す。3処理のrunも保存した出力を再利用し、同じ割当への異なる入力は拒否する。文章制作などGrok側の処理を厳密なexactly-onceにするものではない。
+
 ## 4. 状態と再開
 
 状態：`draft / queued / running / waiting_input / waiting_connection / waiting_approval / paused / ready_for_review / completed / blocked / cancelled`。
 工程：`scope / research / plan / create / validate / package / deliver`。
+
+上記は業務上の工程名。CLIのstageは最初scope、その後は割当role（sales/research/creator/qa/delivery等）を保存する。waiting_input/approvalは設計上の状態で、この版では入力不足はblocked、外部操作はGrok側で待機する。
 
 `state.json` にjobId、version、mode、status、stage、activeAssignmentId、completedAssignmentIds、updatedAt、blockersを保存する。modeは `sample` または `live`。sampleは架空入力、liveは実際の対象情報を使うという区別で、Bot自体の実行を擬似アニメーションにしない。
 
