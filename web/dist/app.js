@@ -1,4 +1,5 @@
 'use strict';
+const assetBase = new URL('.', document.currentScript.src);
 const $ = (id) => document.getElementById(id);
 const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let result = null, sampleResult = null, sampleCsv = '', csvText = '', sourceName = 'sample';
@@ -29,7 +30,7 @@ function startEngine() {
     $('retry').classList.remove('hidden'); updateButtons();
   };
   try {
-    worker = new Worker('./worker.js');
+    worker = new Worker(new URL('worker.js', assetBase));
     timer = setTimeout(fail, 90000);
     worker.onerror = fail;
     worker.onmessage = ({data}) => {
@@ -169,7 +170,7 @@ function resetSample(){
 $('reset').addEventListener('click',resetSample);
 async function loadSample(){
   try{
-    const responses=await Promise.all([fetch('./sample.csv'),fetch('./sample-result.json')]);
+    const responses=await Promise.all([fetch(new URL('sample.csv', assetBase)),fetch(new URL('sample-result.json', assetBase))]);
     if(responses.some(r=>!r.ok))throw new Error();
     [sampleCsv,sampleResult]=await Promise.all([responses[0].text(),responses[1].json()]);resetSample();
   }catch{showError('サンプルの読み込みに失敗しました。ページを再読み込みしてください。');}

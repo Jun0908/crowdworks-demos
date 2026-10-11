@@ -2,11 +2,13 @@
 
 請求書の転記、営業候補の整理、契約更新対象者の抽出を自動化する、3つの業務デモです。**ソースコード・サンプル入力・出力例・検証手順**を同梱しています。
 
-**公開アプリ：[Koushin — 契約更新チェッカーを試す](https://koushin-checker-jun0908.vercel.app)**
+**紹介サイト：[Koushin — 契約更新チェッカー](https://koushin-checker-jun0908.vercel.app/)**
+
+**操作デモ：[サンプル250名で試す](https://koushin-checker-jun0908.vercel.app/demo/)**
 
 ログイン不要。架空の職員250名ですぐに体験でき、対象月の変更、CSV読み込み、AM別Excel・CSV・確認依頼文ZIPのダウンロードに対応しています。計算はブラウザ内で実行し、入力CSVをサーバーに送信しません。[Web版の構成・実行方法](web/README.md)
 
-[![Koushinの操作画面](web/preview.png)](https://koushin-checker-jun0908.vercel.app)
+[![Koushinの操作画面](web/preview.png)](https://koushin-checker-jun0908.vercel.app/demo/)
 
 特に契約更新デモでは、更新内容が未反映の終了日列に依存せず、当初の開始日と契約周期から対象者を計算します。架空データ250行・2026年11月の条件で、旧方式が見落とす3ヶ月契約者19名を抽出。境界値・閏年・データ不備を含む自動テストは **62件成功**しています。
 

@@ -23,3 +23,10 @@
 - Visually inspected initial state, results table, comparison, export actions and mobile layout.
 - Public deployment: verified in a fresh unauthenticated Chrome context, recalculated 80 / 37 / 19 / 7, downloaded and parsed a 16-sheet XLSX; no page errors.
 - Vercel production URL: https://koushin-checker-jun0908.vercel.app — repeated anonymous browsing, live extraction (80 / 37 / 19 / 7) and Excel download verification; no page errors.
+
+## Introduction page and demo route (2026-10-11)
+
+- `/` presents the product introduction; `/demo/` hosts the existing interactive app.
+- Desktop 1440×1000 and mobile 390×844: introduction page visually inspected; no horizontal overflow.
+- Introduction CTA → demo → live extraction (80 / 37 / 19 / 7) → Excel download → return to introduction passed locally.
+- FAQ expansion works; demo assets and Worker resolve from the shared site root.

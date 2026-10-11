@@ -1,6 +1,8 @@
 # Koushin — 契約更新チェッカー Web版
 
-**公開URL：[Koushinを開く](https://koushin-checker-jun0908.vercel.app)**（ログイン不要）
+**紹介サイト：[Koushinを知る](https://koushin-checker-jun0908.vercel.app/)**
+
+**操作デモ：[Koushinを試す](https://koushin-checker-jun0908.vercel.app/demo/)**（ログイン不要）
 
 サンプル250名またはCSVを読み込み、契約更新対象者の抽出からAM別の確認資料作成までをブラウザ内で行います。
 
@@ -14,6 +16,8 @@
 - 入力データはブラウザ内のみで処理。サーバー送信、永続保存、メール送信はありません。
 
 ## 構成
+
+トップページ（`dist/index.html`・`intro.css`）では、解決する課題、機能、サンプルの比較結果、操作画面、使い方、FAQを紹介します。各CTAから `dist/demo/index.html` の操作デモへ進み、デモの「製品紹介」リンクからトップに戻れます。トップページでは計算エンジンを読み込みません。
 
 静的HTML／CSS／JavaScriptと、Web Worker内で動作するPyodide 0.27.7を使っています。
 `dist/python/renewal.py` と `extract_renewals.py` は元の契約更新デモからビルド時にコピーし、計算ルールを共有しています。
@@ -31,7 +35,7 @@ python -X utf8 web/build.py
 python -m http.server 8765 --bind 127.0.0.1 --directory web/dist
 ```
 
-ブラウザで `http://127.0.0.1:8765` を開きます。Python実行環境はjsDelivrから読み込むため、初回の計算エンジン起動にはインターネット接続が必要です。失敗時は画面上の再読み込みボタンから再試行できます。
+ブラウザで `http://127.0.0.1:8765/` を開くと紹介ページ、`http://127.0.0.1:8765/demo/` で操作デモを表示します。Python実行環境はjsDelivrから読み込むため、初回の計算エンジン起動にはインターネット接続が必要です。失敗時は画面上の再読み込みボタンから再試行できます。
 
 ```powershell
 python -m pytest -q "3_契約更新抽出/tests" web/tests

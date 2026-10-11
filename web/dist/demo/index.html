@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="契約更新の見落としを防ぐ、無料の業務デモ。サンプル250名ですぐに体験。対象者抽出、旧方式との比較、AM別Excel・CSV・依頼文の作成をブラウザで。">
+  <meta name="theme-color" content="#157966">
+  <title>Koushin — 契約更新チェッカー</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip">メインコンテンツへ</a>
+<aside class="sidebar">
+  <a class="brand" href="../" aria-label="Koushin ホーム"><span class="brand-icon">k<span>↗</span></span><span>Koushin<span class="brand-sub">契約更新チェッカー</span></span></a>
+  <div class="workspace"><span class="workspace-icon">K</span><div>デモワークスペース<small>架空データで体験できます</small></div><span class="chevron">⌄</span></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav aria-label="メインナビゲーション">
+    <a href="#main" class="active"><span>▦</span>更新対象の抽出<span class="nav-dot"></span></a>
+    <a href="#results"><span>☷</span>対象者一覧</a>
+    <a href="#comparison"><span>▥</span>旧方式との比較</a>
+    <button id="help-nav"><span>ⓘ</span>使い方と計算ルール</button>
+  </nav>
+  <div class="side-note"><span class="note-icon">✓</span><strong>そのデータ、端末の中だけ。</strong><p>CSVの読み込みから出力まで、すべてブラウザ内で処理します。</p><span class="small-badge">サーバーへの送信なし</span></div>
+  <div class="sidebar-footer"><span class="avatar">J</span><div>CrowdWorks Demos<small>業務を、ひとつずつシンプルに。</small></div></div>
+</aside>
+<div class="shell">
+  <header class="topbar"><div><a class="mobile-brand" href="../" aria-label="製品紹介に戻る">Koushin</a><span class="breadcrumb">ワークスペース <span>/</span> <b>更新対象の抽出</b></span></div><div class="top-right"><a href="../" class="intro-back">← 製品紹介</a><span class="demo-badge"><i></i> インタラクティブデモ</span><button class="icon-button" id="help-top" aria-label="使い方を開く">?</button></div></header>
+  <main id="main">
+    <section class="page-heading"><div><div class="eyebrow">CONTRACT RENEWAL</div><h1>更新対象を、漏れなく。</h1><p>契約の開始日から更新周期を計算。確認から資料づくりまで、ひとつの画面で。</p></div><button id="reset" class="button secondary"><span>↻</span> サンプルで試す</button></section>
+    <div class="sample-banner"><span class="banner-icon">✧</span><div><strong id="source-label">架空の職員データ250名を読み込み済み</strong><span id="source-description">まずはそのまま抽出。条件を変えて結果の違いも確認できます。</span></div><label class="upload-button" for="csv-file">CSVを読み込む <span>↑</span></label><input id="csv-file" type="file" accept=".csv,text/csv" class="visually-hidden"></div>
+    <section class="card settings" aria-label="抽出条件">
+      <div class="section-title"><h2><span class="step">01</span> 抽出条件</h2><span class="muted">開始日と契約期間から自動計算</span></div>
+      <form id="run-form">
+        <div class="field"><label for="month">対象月</label><input type="month" id="month" min="1900-01" max="2100-12" value="2026-11" required></div>
+        <div class="field"><label for="lookahead">抽出する範囲</label><select id="lookahead"><option value="0">対象月のみ</option><option value="1">翌月末まで（＋1ヶ月）</option><option value="2">翌々月末まで（＋2ヶ月）</option></select></div>
+        <div class="field convention"><label for="convention">終了日の計算ルール</label><select id="convention"><option value="civil">応当日の前日（対応日なしは月末）</option><option value="minus1">開始日 ＋ 期間 − 1日</option><option value="calendar">開始月を含めて月末締め</option></select></div>
+        <button type="submit" class="button primary" id="run" disabled><span aria-hidden="true">⌕</span> 更新対象を抽出 <span>→</span></button>
+      </form>
+      <div class="settings-footer"><span id="runtime-status" role="status"><i class="status-dot pending"></i>計算エンジンの読み込み中…初回のみ少し時間がかかります</span><button class="text-button hidden" id="retry">再読み込み</button><a href="../sample.csv" download="職員サンプル.csv">入力CSVのサンプル ↓</a></div>
+      <div id="error" class="error hidden" role="alert"></div>
+      <div id="dirty" class="dirty hidden" role="status">条件・入力が変更されています。「更新対象を抽出」で結果を更新してください。</div>
+    </section>
+    <div class="result-heading"><h2 id="period-heading">2026年11月の抽出結果</h2><span id="result-state" class="result-state">保存済みサンプル結果</span></div>
+    <section class="metrics" aria-label="抽出結果の集計">
+      <article class="metric"><div class="metric-label">更新対象者 <span>♙</span></div><div class="metric-value"><strong id="count-total">80</strong><span>名</span></div><p id="count-source">入力250名から抽出</p></article>
+      <article class="metric"><div class="metric-label">うち3ヶ月契約 <span>▦</span></div><div class="metric-value"><strong id="count-three">37</strong><span>名</span></div><p>短期契約の更新も確実に確認</p></article>
+      <article class="metric highlight"><div class="metric-label">旧方式の抽出漏れを検出 <span>↗</span></div><div class="metric-value"><strong id="count-missed">19</strong><span>名</span></div><p>3ヶ月契約・終了日列の参照と比較</p></article>
+      <article class="metric warning"><div class="metric-label">データの要確認 <span>ⓘ</span></div><div class="metric-value"><strong id="count-issues">7</strong><span>件</span></div><p>不正な日付やAM未設定など</p></article>
+    </section>
+    <section class="card results" id="results">
+      <div class="section-title result-title"><h2><span class="step">02</span> 対象者一覧 <span id="table-count" class="count-pill">80</span></h2><div class="downloads"><button id="download-csv" class="button small secondary" disabled>CSV ↓</button><button id="download-xlsx" class="button small primary" disabled>Excelをダウンロード ↓</button></div></div>
+      <div class="tabs" role="tablist" aria-label="結果の種類"><button role="tab" aria-selected="true" data-tab="targets">更新対象 <span id="tab-targets">80</span></button><button role="tab" aria-selected="false" data-tab="missed">旧方式で漏れる対象 <span id="tab-missed">19</span></button><button role="tab" aria-selected="false" data-tab="issues">要確認 <span id="tab-issues">7</span></button><button role="tab" aria-selected="false" data-tab="excluded">退職予定で除外 <span id="tab-excluded">3</span></button></div>
+      <div class="table-tools"><div class="search"><span>⌕</span><input type="search" id="search" placeholder="氏名・職員IDで検索" aria-label="氏名・職員IDで検索"></div><select id="am-filter" aria-label="担当AMで絞り込み"><option value="">すべてのAM</option></select><span class="table-note" id="table-note">満了日が早い順に表示</span></div>
+      <div class="table-scroll" tabindex="0" aria-label="対象者テーブル。横にスクロールできます"><table><thead id="table-head"></thead><tbody id="table-body"><tr><td class="empty">サンプル結果を読み込んでいます…</td></tr></tbody></table></div>
+      <div class="table-footer"><span id="page-info">読み込み中</span><div class="pagination"><button id="prev-page" aria-label="前のページ">←</button><span id="page-number">1 / 8</span><button id="next-page" aria-label="次のページ">→</button></div></div>
+      <div class="export-note">ダウンロードは検索・絞り込みに関係なく、抽出結果全体を出力します。</div>
+    </section>
+    <div class="bottom-grid">
+      <section class="card comparison" id="comparison"><div class="section-title"><h2><span class="step">03</span> 抽出漏れを、見える化。</h2><span class="small-badge">3ヶ月契約の比較</span></div><p class="section-description">終了日列の更新が追いつかなくても、起算日から次の満了日を計算します。</p><div id="comparison-bars"></div><div class="comparison-foot"><span class="legend-dot"></span> 周期ルールに合う対象者 <span class="legend-dot pale"></span> 抽出漏れ</div><p class="fine-print">比較基準は本デモの周期ルールです。実際の契約条件との照合が必要です。</p></section>
+      <section class="card handoff"><div class="section-title"><h2>確認依頼も、すぐに。</h2><span class="letter-icon">↗</span></div><p class="section-description">担当AMごとの人数・対象者・回答期限をまとめた依頼文を作成します。</p><div class="handoff-stat"><strong id="message-count">13</strong><span>件の確認依頼文</span><span class="small-badge">TXT / ZIP</span></div><div class="deadline">回答期限の初期値 <strong id="deadline">2026-10-20</strong></div><button id="download-zip" class="button secondary full" disabled>AM別の依頼文をダウンロード ↓</button><p class="fine-print">文面を確認・編集してご利用ください。メールの自動送信は行いません。</p></section>
+    </div>
+    <footer class="page-footer"><span><b>Koushin</b> · CrowdWorks Demos</span><button id="help-footer" class="text-button">計算ルール・制約・検証について ↗</button><span>架空データによる業務デモ</span></footer>
+  </main>
+</div>
+<dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><div><div class="eyebrow">HOW IT WORKS</div><h2 id="help-title">契約更新チェッカーの使い方</h2></div><button class="icon-button" id="close-help" aria-label="説明を閉じる">×</button></div><div class="dialog-body"><h3>3つのステップで、確認資料まで。</h3><ol><li>サンプルまたはCSVを読み込み、対象月を選びます。</li><li>「更新対象を抽出」を押すと、対象・除外・要確認を表示します。</li><li>Excel、CSV、AM別の依頼文をダウンロードします。</li></ol><h3>対応する入力</h3><p>CSVはUTF-8またはShift-JIS、最大2MB・5,000行。必須列は「職員ID」「氏名」「契約開始日」「契約期間(月)」「在籍状態」です。「エリア」「エリアマネージャー」「契約終了日」は任意列です。期間は1・3・6・12ヶ月に対応します。</p><h3>終了日の計算ルール</h3><p>当初開始日を起点に毎期の満了日を計算します。前期の月末から連鎖計算しないため、短い月による日付のずれを避けます。</p><ul><li><b>応当日の前日：</b>開始日と同じ日付の前日に満了。同じ日付がない月は月末。</li><li><b>開始日＋期間−1日：</b>存在しない日を月末に切り詰めた後、1日引きます。</li><li><b>月末締め：</b>開始月を1ヶ月目として、期間にあたる月の末日に満了。</li></ul><h3>検証と適用範囲</h3><p>元のPython計算ロジックには62件の自動テストがあります。サンプル250行・2026年11月の結果は対象80名、3ヶ月契約37名、旧方式Aの漏れ19名です。</p><p>同じ期間で継続更新する契約を想定しています。期間変更・再雇用・異動履歴は未対応です。期限や無期転換関連のフラグは簡略化した参考値であり、実際の契約条件を確認してください。</p><h3>データの扱い</h3><p>処理はブラウザ内で実行し、入力CSVをサーバーへ送信・保存しません。ページを閉じると読み込んだデータは失われます。初回は計算エンジンとライブラリのダウンロードが必要です。</p><p class="fine-print">サンプルはすべて架空です。「旧方式との比較」は実データの精度を保証するものではありません。</p></div></dialog>
+<noscript><p class="noscript">抽出・検索・ファイル出力を利用するにはJavaScriptを有効にしてください。</p></noscript>
+</body>
+</html>
