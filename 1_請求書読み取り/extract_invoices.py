@@ -34,6 +34,8 @@ CJK = r"\u3040-\u30ff\u3400-\u9fff\uff00-\uffef々〆ー"
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKC", s)
     s = s.replace("\u3000", " ")
+    # OCR can split a thousands separator from the following digit group.
+    s = re.sub(r'(?<=\d),\s+(?=\d{3}(?:\D|$))', ',', s)
     # OCR や PDF で入る「日 本 語」の間の空白を詰める（ASCII 同士の空白は残す）
     s = re.sub(rf"(?<=[{CJK}])[ ](?=[{CJK}])", "", s)
     s = re.sub(rf"(?<=[{CJK}])[ ](?=[{CJK}])", "", s)
@@ -290,7 +292,20 @@ class Result:
 
 def process(path: Path, self_name: str) -> Result:
     lines, method = read_pdf(path)
-    r = Result(file=path.name, method=method)
+    return process_lines(lines, path.name, method, self_name)
+
+def process_lines(lines: list[str], filename: str, method: str, self_name: str) -> Result:
+    """Extract fields from normalized lines, shared by CLI and browser readers."""
+    raw_lines = list(lines)
+    lines = [norm(line) for line in lines if line.strip()]
+    corrections = []
+    if 'OCR' in method:
+        # Correct known OCR confusions in labels, never invent missing values.
+        for old, new in [('支払期口', '支払期日'), ('株弐会社', '株式会社'), ('腐通', '普通')]:
+            if any(old in line for line in lines):
+                lines = [line.replace(old, new) for line in lines]
+                corrections.append(f'{old}→{new}')
+    r = Result(file=filename, method=method)
     r.invoice_date, isrc, r.due_date, dsrc = extract_dates(lines)
     r.total, asrc, check, has_wh = extract_amount(lines)
     r.vendor, _ = extract_vendor(lines, self_name)
@@ -310,8 +325,9 @@ def process(path: Path, self_name: str) -> Result:
     if isrc and "ラベルなし" in isrc: r.notes.append("請求日はラベルなし推定")
     if r.invoice_date and r.due_date and r.due_date < r.invoice_date: r.notes.append("期日<請求日")
     if "OCR" in method: r.notes.append("OCR読取: 目視確認推奨")
+    if corrections: r.notes.append('OCR表記の補正: ' + '/'.join(corrections))
     r.needs_review = bool(miss or bmiss or check is False or r.category == "要確認" or "OCR" in method)
-    r._debug = dict(lines=lines, issue_src=isrc, due_src=dsrc, amount_src=asrc, amount_check=check, category_detail=cat_detail)
+    r._debug = dict(lines=lines, raw_lines=raw_lines, issue_src=isrc, due_src=dsrc, amount_src=asrc, amount_check=check, category_detail=cat_detail)
     return r
 
 def mark_duplicates(results):

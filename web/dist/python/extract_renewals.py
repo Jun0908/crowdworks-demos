@@ -257,7 +257,8 @@ def build_messages(outdir, recs, deadline, period_label):
                           deadline=jdate(deadline), lines=lines, sheet=am[:28], notice=notice)
         if am == R.AM_MISSING_LABEL:
             body = "※担当エリアマネージャー未設定のため、宛先を特定してから使用してください。\n\n" + body
-        p = os.path.join(outdir, f"確認依頼_{re.sub(r'[^\w一-龥ぁ-んァ-ン]', '_', am)}.txt")
+        safe_am = re.sub(r'[^\w一-龥ぁ-んァ-ン]', '_', am)
+        p = os.path.join(outdir, f"確認依頼_{safe_am}.txt")
         with open(p, "w", encoding="utf-8") as f:
             f.write(body)
         paths.append(p)

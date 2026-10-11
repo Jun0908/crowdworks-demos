@@ -1,0 +1,771 @@
+{
+  "places": [
+    {
+      "id": "MOCK_PLACE_0001",
+      "displayName": {
+        "text": "【架空】炭火焼肉 サンプル亭 青梅店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市サンプル町1-1-1",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000001",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0001",
+      "rating": 4.2,
+      "userRatingCount": 123,
+      "websiteUri": "https://example.com/sample-tei",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "炭火焼肉 青梅市"
+    },
+    {
+      "id": "MOCK_PLACE_0018",
+      "displayName": {
+        "text": "【架空】炭火焙煎珈琲 サンプル",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市カフェ18-18",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000018",
+      "types": [
+        "cafe",
+        "food"
+      ],
+      "primaryType": "cafe",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0018",
+      "rating": 4.3,
+      "userRatingCount": 60,
+      "_query": "炭火焼肉 青梅市"
+    },
+    {
+      "id": "MOCK_PLACE_0001",
+      "displayName": {
+        "text": "【架空】炭火焼肉 サンプル亭 青梅店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市サンプル町1-1-1",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000001",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0001",
+      "rating": 4.2,
+      "userRatingCount": 123,
+      "websiteUri": "https://example.com/sample-tei",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 青梅市"
+    },
+    {
+      "id": "MOCK_PLACE_0002",
+      "displayName": {
+        "text": "【架空】焼肉 テスト苑",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市テスト町2-2",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000002",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0002",
+      "rating": 3.9,
+      "userRatingCount": 45,
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "七輪で出てくるのが良い（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "七輪で出てくるのが良い（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "タンが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "タンが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 青梅市"
+    },
+    {
+      "id": "MOCK_PLACE_0003",
+      "displayName": {
+        "text": "【架空】ホルモン サンプル横丁",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒190-1200 東京都西多摩郡瑞穂町ダミー3-3",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000003",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0003",
+      "rating": 4.0,
+      "userRatingCount": 67,
+      "editorialSummary": {
+        "text": "炭火で焼くホルモンが名物の大衆店（架空）",
+        "languageCode": "ja"
+      },
+      "_query": "ホルモン 瑞穂町"
+    },
+    {
+      "id": "MOCK_PLACE_0004",
+      "displayName": {
+        "text": "【架空】焼肉 ダミー館 福生店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒197-0000 東京都福生市モック4-4",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000004",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0004",
+      "rating": 3.5,
+      "userRatingCount": 210,
+      "websiteUri": "https://example.com/dummy-kan",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "無煙ロースターで服が臭くならない（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "無煙ロースターで服が臭くならない（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "ガス火なので炭火の香りはない（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "ガス火なので炭火の香りはない（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 福生市"
+    },
+    {
+      "id": "MOCK_PLACE_0005",
+      "displayName": {
+        "text": "【架空】七輪焼肉 モック家",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒205-0000 東京都羽村市サンプル5-5",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000005",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0005",
+      "rating": 4.4,
+      "userRatingCount": 88,
+      "_query": "焼肉 羽村市"
+    },
+    {
+      "id": "MOCK_PLACE_0001",
+      "displayName": {
+        "text": "【架空】炭火焼肉 サンプル亭 青梅店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒198-0000 東京都青梅市サンプル町1-1-1",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000001",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0001",
+      "rating": 4.2,
+      "userRatingCount": 123,
+      "websiteUri": "https://example.com/sample-tei",
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭火で焼くカルビが香ばしい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        },
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "店内は少し煙たいです（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 羽村市"
+    },
+    {
+      "id": "MOCK_PLACE_0005",
+      "displayName": {
+        "text": "【架空】七輪焼肉 モック家",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒205-0000 東京都羽村市サンプル5-5",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000005",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "0428-00-0005",
+      "rating": 4.4,
+      "userRatingCount": 88,
+      "_query": "七輪 焼肉 羽村市"
+    },
+    {
+      "id": "MOCK_PLACE_0006",
+      "displayName": {
+        "text": "【架空】炭火焼肉 架空園 昭島店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市テスト6-6",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000006",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0006",
+      "rating": 4.1,
+      "userRatingCount": 150,
+      "_query": "炭火焼肉 昭島市"
+    },
+    {
+      "id": "MOCK_PLACE_0006B",
+      "displayName": {
+        "text": "【架空】炭火焼肉　架空園　昭島店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市テスト６－６",
+      "googleMapsUri": "https://maps.google.com/?cid=000000000000006B",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0006",
+      "_query": "炭火焼肉 昭島市"
+    },
+    {
+      "id": "MOCK_PLACE_0006",
+      "displayName": {
+        "text": "【架空】炭火焼肉 架空園 昭島店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市テスト6-6",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000006",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0006",
+      "rating": 4.1,
+      "userRatingCount": 150,
+      "_query": "焼肉 昭島市"
+    },
+    {
+      "id": "MOCK_PLACE_0007",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル苑 昭島",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒196-0000 東京都昭島市ダミー7-7",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000007",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "CLOSED_PERMANENTLY",
+      "nationalPhoneNumber": "042-000-0007",
+      "rating": 3.8,
+      "userRatingCount": 30,
+      "_query": "焼肉 昭島市"
+    },
+    {
+      "id": "MOCK_PLACE_0008",
+      "displayName": {
+        "text": "【架空】焼肉 ダミー亭 所沢本店",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル8-8",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000008",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0008",
+      "rating": 4.0,
+      "userRatingCount": 300,
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "炭の香りがして最高（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "炭の香りがして最高（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0009",
+      "displayName": {
+        "text": "【架空】炭焼き焼肉 テスト所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト9-9",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000009",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0009",
+      "rating": 4.3,
+      "userRatingCount": 95,
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0010",
+      "displayName": {
+        "text": "【架空】焼肉 モック苑 所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市モック10-10",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000010",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0010",
+      "rating": 3.6,
+      "userRatingCount": 12,
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0011",
+      "displayName": {
+        "text": "【架空】韓国焼肉 サンプル",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市ダミー11-11",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000011",
+      "types": [
+        "korean_restaurant",
+        "restaurant"
+      ],
+      "primaryType": "korean_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0011",
+      "rating": 4.1,
+      "userRatingCount": 77,
+      "reviews": [
+        {
+          "name": "places/MOCK/reviews/x",
+          "rating": 4,
+          "text": {
+            "text": "サムギョプサルが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "originalText": {
+            "text": "サムギョプサルが美味しい（架空）",
+            "languageCode": "ja"
+          },
+          "authorAttribution": {
+            "displayName": "架空レビュアー"
+          }
+        }
+      ],
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0012",
+      "displayName": {
+        "text": "【架空】炭火焼肉 所沢サンプル館",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル12-12",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000012",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0012",
+      "rating": 4.5,
+      "userRatingCount": 410,
+      "websiteUri": "https://example.com/tokorozawa-sample",
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0013",
+      "displayName": {
+        "text": "【架空】焼肉 テスト庵 所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト13-13",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000013",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "rating": 3.2,
+      "userRatingCount": 5,
+      "_query": "焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0009",
+      "displayName": {
+        "text": "【架空】炭焼き焼肉 テスト所沢",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市テスト9-9",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000009",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0009",
+      "rating": 4.3,
+      "userRatingCount": 95,
+      "_query": "炭火焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0012",
+      "displayName": {
+        "text": "【架空】炭火焼肉 所沢サンプル館",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒359-0000 埼玉県所沢市サンプル12-12",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000012",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0012",
+      "rating": 4.5,
+      "userRatingCount": 410,
+      "websiteUri": "https://example.com/tokorozawa-sample",
+      "_query": "炭火焼肉 所沢市"
+    },
+    {
+      "id": "MOCK_PLACE_0014",
+      "displayName": {
+        "text": "【架空】備長炭焼肉 テスト家 飯能",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒357-0000 埼玉県飯能市サンプル14-14",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000014",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0014",
+      "rating": 4.6,
+      "userRatingCount": 58,
+      "_query": "炭火焼肉 飯能市"
+    },
+    {
+      "id": "MOCK_PLACE_0015",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル食堂 入間",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒358-0000 埼玉県入間市ダミー15-15",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000015",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0015",
+      "rating": 3.7,
+      "userRatingCount": 20,
+      "_query": "焼肉 入間市"
+    },
+    {
+      "id": "MOCK_PLACE_0016",
+      "displayName": {
+        "text": "【架空】炭火焼肉 圏外亭 狭山",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒350-1300 埼玉県狭山市圏外16-16",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000016",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "04-0000-0016",
+      "rating": 4.0,
+      "userRatingCount": 40,
+      "_query": "焼肉 入間市"
+    },
+    {
+      "id": "MOCK_PLACE_0017",
+      "displayName": {
+        "text": "【架空】焼肉 サンプル 三芳",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒354-0000 埼玉県入間郡三芳町ダミー17-17",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000017",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "049-000-0017",
+      "rating": 3.9,
+      "userRatingCount": 22,
+      "_query": "焼肉 入間市"
+    },
+    {
+      "id": "MOCK_PLACE_0014",
+      "displayName": {
+        "text": "【架空】備長炭焼肉 テスト家 飯能",
+        "languageCode": "ja"
+      },
+      "formattedAddress": "日本、〒357-0000 埼玉県飯能市サンプル14-14",
+      "googleMapsUri": "https://maps.google.com/?cid=0000000000000014",
+      "types": [
+        "yakiniku_restaurant",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "primaryType": "yakiniku_restaurant",
+      "businessStatus": "OPERATIONAL",
+      "nationalPhoneNumber": "042-000-0014",
+      "rating": 4.6,
+      "userRatingCount": 58,
+      "_query": "焼肉 入間市"
+    }
+  ]
+}

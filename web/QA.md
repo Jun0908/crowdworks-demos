@@ -1,5 +1,25 @@
 # Web app verification
 
+## Invoice and sales-list demos: QA inventory
+
+- Introduction links open `/invoices/` and `/leads/`; each demo links to the introduction and other demos.
+- Invoices: text sample 3 files, optional scan sample 2 files, own PDF upload; reference date and recipient name; OCR progress; search, review/deadline filters; detail and original PDF dialogs; CSV/XLSX/JSON downloads.
+- Leads: 26 sample records; upload/edit JSON and sample reset; eight area checkboxes and review/summary toggle; candidate/exclusion tabs; search and charcoal filter; candidate CSV, exclusion CSV and XLSX downloads; dedupe funnel.
+- Error paths: invalid JSON, missing fields, no selected area, broken PDF, file limits; no exports after failed runs or changed inputs.
+- Desktop 1440×1000 and mobile 390×844: initial and processed states, result controls, detail/preview dialogs and introduction case links; contained table scrolling, no document overflow.
+- Evidence: compare sample output with original logic, parse downloaded files, capture screenshots, monitor runtime errors and network requests during uploaded-data processing.
+
+## Additional demo verification (2026-10-11)
+
+- Python: 91 tests passed, including original engine checks and 17 new adapter cases (input validation, CSV/XLSX protection, per-request isolation and OCR label normalization).
+- Leads: 26 → 19 by ID → 18 by name/contact → 14 candidates, 4 exclusions; charcoal 7 / 2 / 5. Selecting Tokorozawa returns 6 candidates; no selected area produces an actionable error.
+- Leads exports parsed: 14 candidate CSV rows, 4 exclusion CSV rows and a 4-sheet XLSX. Search/no-match, charcoal filter, both tabs, JSON editing, invalid JSON and sample reset passed.
+- Uploaded JSON containing HTML-shaped names renders as text; processing made no network requests and did not modify later sample results.
+- Invoice text sample: 3 actual PDFs, total ¥187,990. All 5 PDFs including Japanese OCR: total ¥624,070; due dates 2026-10-10, 10-15, 10-16, 10-31, 11-20. OCR rows remain marked for review; raw OCR evidence and label corrections are retained.
+- Invoice exports parsed: 5 CSV/JSON records, correct due-date order, and a 2-sheet XLSX. Changed reference date, search/no-match, review/overdue filters, detail and PDF preview passed.
+- Broken PDF and more than 5 uploaded files produce clear errors; exports are disabled after failure or input changes.
+- Desktop 1440×1000 and mobile 390×844: inspected initial/results views and detail/preview dialogs; no document horizontal overflow. Both new links from the introduction and cross-demo navigation work. No browser runtime errors.
+
 ## Agentic Agency introduction: QA inventory
 
 - Content: agency identity, broad service areas, Grok Bot workflow explicitly labeled as design; Koushin is a deliverable example. The supplied document's closing question is excluded.
