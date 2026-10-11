@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agentic Agency — AIがチームになり、仕事を形に。</title>
-  <meta name="description" content="Grok Botを軸に、依頼・調査・制作・品質確認・納品をつなぐAIネイティブな受託チーム。リサーチ、資料制作、Webアプリ、業務自動化まで。構想と動く制作物デモを紹介します。">
+  <meta name="description" content="Agentic Agencyは、Grok Botを軸に調査・制作・納品をつなぐAI受託チームの構想です。幅広い依頼領域と、契約更新・請求書PDF・営業リストの3つの操作デモを紹介。ログイン不要でExcel・CSV出力まで試せます。">
   <meta name="theme-color" content="#183f35">
   <meta property="og:title" content="Agentic Agency — AIがチームになり、仕事を形に。">
-  <meta property="og:description" content="依頼を、役割を持つBotチームへ。調査から制作・品質確認・納品までをつなぐ、AIネイティブな受託モデル。">
+  <meta property="og:description" content="調査・Web開発・業務自動化を、役割を持つAIチームへ。契約更新・請求書PDF・営業リストの3つの公開デモで、入力から成果物の出力まで体験できます。">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://koushin-checker-jun0908.vercel.app/">
   <link rel="icon" type="image/svg+xml" href="./agency.svg">
@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./intro.css">
   <link rel="stylesheet" href="./agency.css">
+  <link rel="stylesheet" href="./gallery.css">
 </head>
 <body>
   <a class="skip" href="#main">本文へスキップ</a>
@@ -32,6 +33,7 @@
         <p class="lead">リサーチ、資料づくり、Webアプリ、業務自動化。<br>役割を持ったBotが連携し、使える成果物へ。<br>AIで構成する受託チーム「Agentic Agency」です。</p>
         <div class="actions"><a class="button" href="#work">3つの制作デモを見る <span aria-hidden="true">↗</span></a><a class="text-link" href="#team">チームの仕組み <span aria-hidden="true">↓</span></a></div>
         <p class="hero-note">Grok Botを軸に、AIネイティブな受託モデルを検証するプロジェクト。</p>
+        <div class="hero-demo-links" aria-label="公開デモへのショートカット"><span>LIVE DEMOS</span><a href="./demo/">契約更新 ↗</a><a href="./invoices/">請求書PDF ↗</a><a href="./leads/">営業リスト ↗</a></div>
       </div>
       <div class="agency-visual" aria-label="依頼を受け、Botチームが調査・制作・確認し、人間の承認後に成果物を納品する構成図">
         <div class="workflow-head"><span>YOUR AI SERVICE TEAM</span><span class="outline-pill">ワークフロー設計</span></div>
@@ -54,18 +56,22 @@
         <article><span class="service-number">04 / AI WORKFLOWS</span><h3>AI・Botの業務活用</h3><p>問い合わせ対応、情報検索、調査から制作への引き継ぎなど、仕事に合うBotの設計。</p><span>チャットBot / 検索AI / ワークフロー</span></article>
       </div><p class="service-note">上記は相談・展開を想定する領域です。対応範囲・納期・費用は、依頼内容と必要なアクセス権を確認して決めます。</p>
     </section>
+    <section class="section container" id="work"><div class="section-heading"><div><p class="eyebrow">3 LIVE DEMOS / WORK YOU CAN INSPECT</p><h2>手作業が、成果物に変わる。<br>3つのデモで体験する。</h2></div><p class="section-aside">サンプルを選び、条件を変え、ファイルを出力。<br>どれもログイン不要で操作できます。</p></div>
+      <div class="demo-gallery">
+        <article class="demo-card"><a class="demo-screen" href="./demo/" aria-label="契約更新チェッカーのデモを開く"><div class="screen-chrome"><span>01 / CONTRACT RENEWAL</span><span aria-hidden="true">↗</span></div><img src="./assets/dashboard.png" alt="Koushinの実画面。更新対象80名、旧方式の見落とし19名を表示。" width="1440" height="1000" loading="lazy"></a><div class="demo-copy"><span class="live-label"><span class="dot"></span> 操作できるデモ</span><h3>契約更新チェッカー</h3><p class="demo-name">Koushin / 見落としを、更新前に。</p><p class="demo-description">開始日と契約期間から更新対象を抽出。終了日列の反映を待たずに、担当者ごとの確認資料をつくります。</p><div class="demo-result"><strong>250名 <span>→</span> 80名</strong><span>更新対象を抽出・旧方式の漏れ19名を検出</span></div><dl class="demo-details"><div><dt>INPUT</dt><dd>架空の職員250名 / 自分のCSV</dd></div><div><dt>TRY</dt><dd>対象月・契約ルールを変えて再計算</dd></div><div><dt>OUTPUT</dt><dd>担当者別Excel / CSV / 確認依頼文ZIP</dd></div></dl><a class="button" href="./demo/">契約更新を試す <span aria-hidden="true">↗</span></a><p class="demo-condition">表示値は2026年11月・既定ルールのサンプル結果。</p></div></article>
+        <article class="demo-card"><a class="demo-screen" href="./invoices/" aria-label="請求書PDFの読み取りデモを開く"><div class="screen-chrome"><span>02 / INVOICE PROCESSING</span><span aria-hidden="true">↗</span></div><img src="./assets/invoices.png" alt="請求書デモの実画面。PDF3件を読み取り、請求額合計187,990円を表示。" width="1440" height="1000" loading="lazy"></a><div class="demo-copy"><span class="live-label"><span class="dot"></span> 操作できるデモ</span><h3>請求書PDFの読み取り</h3><p class="demo-name">PDFから、支払予定の一覧へ。</p><p class="demo-description">取引先・金額・支払期日を読み取り、期日順に整理。スキャンPDFは日本語OCRで処理し、原本と比較できます。</p><div class="demo-result"><strong>3件 <span>→</span> ¥187,990</strong><span>サンプルPDFから請求額・期日を抽出</span></div><dl class="demo-details"><div><dt>INPUT</dt><dd>サンプルPDF / 自分のPDF</dd></div><div><dt>TRY</dt><dd>スキャン2件を追加・原本と照合</dd></div><div><dt>OUTPUT</dt><dd>支払予定Excel / CSV / 抽出JSON</dd></div></dl><a class="button" href="./invoices/">請求書PDFを試す <span aria-hidden="true">↗</span></a><p class="demo-condition">表示値はテキストPDF3件。OCR結果は要確認。</p></div></article>
+        <article class="demo-card"><a class="demo-screen" href="./leads/" aria-label="営業候補リストの整理デモを開く"><div class="screen-chrome"><span>03 / SALES OPERATIONS</span><span aria-hidden="true">↗</span></div><img src="./assets/leads.png" alt="営業リストデモの実画面。入力26件から候補14件を抽出、重複8件を統合、対象外4件を除外。" width="1440" height="1000" loading="lazy"></a><div class="demo-copy"><span class="live-label"><span class="dot"></span> 操作できるデモ</span><h3>営業候補リストの整理</h3><p class="demo-name">検索結果から、根拠つきの候補へ。</p><p class="demo-description">店舗情報の重複をまとめ、対象エリア・業種で絞り込み。炭火の判定根拠と、除外した理由も残します。</p><div class="demo-result"><strong>26件 <span>→</span> 14件</strong><span>重複8件を統合・対象外4件を除外</span></div><dl class="demo-details"><div><dt>INPUT</dt><dd>架空の検索結果26件 / 自分のJSON</dd></div><div><dt>TRY</dt><dd>対象エリア・判定に使う情報を変更</dd></div><div><dt>OUTPUT</dt><dd>候補・除外一覧Excel / CSV</dd></div></dl><a class="button" href="./leads/">営業リストを試す <span aria-hidden="true">↗</span></a><p class="demo-condition">架空データの既定条件。分類は文言ルールによる判定。</p></div></article>
+      </div>
+      <div class="demo-guide"><div><strong>サンプルで、そのまま試せます。</strong><p>入力ファイルの処理と出力はブラウザ内で行います。初回は実行環境の取得に通信が必要です。請求書の日本語OCRは、モデルの取得と読み取りに時間がかかります。</p></div><div><strong>制作物と、AIチームの設計を公開。</strong><p>この3つは実際に操作できる業務ツールです。Grok APIによるBot連携は今後の実装対象です。下のチーム構成では、依頼から納品までをつなぐ設計を紹介します。</p><a class="text-link" href="#team">Botチームの構成を見る <span aria-hidden="true">↓</span></a></div></div>
+    </section>
     <section class="features section" id="team"><div class="container"><div class="section-heading"><div><p class="eyebrow">BUILT AROUND GROK BOT</p><h2>仕事を、役割を持つ<br>Botチームへ。</h2></div><p>受託業務の工程を分担し、<br>次の担当が使える形で引き継ぐ設計。</p></div>
       <div class="role-grid"><article><span>01</span><h3>Orchestrator</h3><h4>依頼を、実行できる計画に。</h4><p>目的・要件・完成条件を整理し、工程と担当を決める。</p></article><article><span>02</span><h3>Research</h3><h4>情報を、根拠とともに。</h4><p>必要な情報を調査し、出典と未確認事項を残す。</p></article><article><span>03</span><h3>Analyst</h3><h4>調査結果を、判断材料に。</h4><p>主張と根拠を結びつけ、論点や分析上の制約を整理する。</p></article><article><span>04</span><h3>Creator</h3><h4>要件を、使える成果物に。</h4><p>レポート・資料・アプリなど、依頼に合った形式へ仕上げる。</p></article><article><span>05</span><h3>QA</h3><h4>完成条件まで、確かめる。</h4><p>要件・事実・形式を確認し、修正が必要なら該当工程へ戻す。</p></article><article><span>06</span><h3>Delivery</h3><h4>確認を経て、届ける。</h4><p>成果物と検証結果を整理し、人間の承認後に提出する。</p></article></div>
       <div class="team-footnote"><span class="outline-pill">チーム構成の設計</span><p>役割・Skill名は設計上の定義です。稼働済みBotや、全工程の自動化を示すものではありません。</p></div>
     </div></section>
-    <section class="section container" id="work"><div class="section-heading"><div><p class="eyebrow">WORK YOU CAN INSPECT</p><h2>説明だけで終わらない。<br>実際に触れる、制作物。</h2></div><p class="section-aside">入力・処理・出力まで確かめられる、<br>業務ツールの制作例を公開しています。</p></div>
-      <div class="showcase"><div class="showcase-copy"><span class="case-pill">操作できる制作物デモ</span><h3>Koushin</h3><p class="case-title">契約更新チェッカー</p><p>終了日列の反映を待たずに、開始日と契約期間から更新対象を抽出。担当者別のExcel・CSV・確認依頼文を出力します。</p><div class="case-stats"><div><strong>250<small>名</small></strong><span>架空サンプル</span></div><div><strong>19<small>名</small></strong><span>旧方式の見落としを検出</span></div></div><a class="button" href="./demo/">このデモを試す <span aria-hidden="true">↗</span></a><p class="case-disclosure">2026年11月・既定ルールのサンプル結果。Grok Bot連携を内蔵したアプリではなく、制作物としての機能を試すデモです。</p></div><a class="case-screen" href="./demo/" aria-label="契約更新チェッカーの操作デモを開く"><div class="screen-chrome"><span aria-hidden="true">● ● ●</span><span>Koushin / Demo</span><span aria-hidden="true">↗</span></div><img src="./assets/dashboard.png" alt="契約更新チェッカー。更新対象80名、3か月契約37名、旧方式の見落とし19名を表示。" width="1440" height="1000" loading="lazy"></a></div>
-      <div class="other-work"><article><span>DATA PROCESSING / 操作できるデモ</span><h3>請求書PDFの読み取り</h3><p>PDFを実際に読み取り、支払期日順のExcelを作成。スキャンPDFは日本語OCRに対応し、原本と抽出結果を比較できます。</p><a class="text-link" href="./invoices/">請求書デモを試す <span aria-hidden="true">↗</span></a></article><article><span>SALES OPERATIONS / 操作できるデモ</span><h3>営業候補リストの整理</h3><p>架空の検索結果26件を重複排除・分類。エリアと判定条件を変えて、根拠つきの候補14件をExcel・CSVへ出力します。</p><a class="text-link" href="./leads/">営業リストデモを試す <span aria-hidden="true">↗</span></a></article></div>
-    </section>
     <section class="how section" id="workflow"><div class="container"><p class="eyebrow">FROM REQUEST TO DELIVERY</p><h2>納品物と、その根拠まで。</h2><div class="steps"><article><span>01</span><h3>依頼と完成条件をそろえる</h3><p>何のためにつくるか、必要な形式は何か。要件と完了条件を、作業前に明確にします。</p></article><article><span>02</span><h3>Botが分担し、検証する</h3><p>調査・分析・制作・QAをつなぎ、出典や確認結果を残すワークフローを設計します。</p></article><article><span>03</span><h3>人間の承認を経て納品へ</h3><p>成果物・実行証跡・未確認事項をまとめ、提出先と内容を確認して届けることを目指します。</p></article></div><p class="workflow-note">今回の検証対象は、リサーチから成果物の作成・提出までの一連の流れです。</p></div></section>
     <section class="section container vision-grid"><div><p class="eyebrow">A REUSABLE WAY TO WORK</p><h2>仕事を重ねるほど、<br>仕事の型が育つ。</h2><p class="body-copy">案件で確認した手順をSkillとして整理し、次の仕事で再利用する。Agentic Agencyが目指すのは、Botの数を増やすことだけではなく、品質を確かめた仕事の進め方を蓄積することです。</p></div><div class="roadmap"><article><span>NOW / 検証対象</span><h3>依頼から成果物・提出まで</h3><p>完了した工程と、人間が介入した箇所を確かめる。</p></article><article><span>NEXT / 拡張構想</span><h3>Skillの再利用と継続案件</h3><p>異なる依頼でも、品質・コスト・納期を検証する。</p></article><article><span>FUTURE / 長期仮説</span><h3>AIがAIへ仕事を依頼する市場</h3><p>発注側のAIと受託側のAIがつながるネットワークへ。</p></article></div></section>
     <section class="container final-cta"><div><p class="eyebrow">AGENTIC AGENCY</p><h2>仕事の価値を、成果物で届ける。</h2><p>まずは、実際に動く3つの制作物で、できることを確かめてください。</p><a class="button" href="#work">制作デモを選ぶ <span aria-hidden="true">↗</span></a></div><span class="cta-arrow" aria-hidden="true">↗</span></section>
   </main>
-  <footer class="container footer"><div class="footer-top"><a class="brand agency-brand" href="./"><img src="./agency.svg" alt="" width="30" height="30"><span>Agentic Agency</span></a><nav aria-label="フッターナビゲーション"><a href="#services">依頼できること</a><a href="#team">Botチーム</a><a href="./demo/">制作デモ ↗</a></nav></div><div class="footer-bottom"><span>© 2026 Agentic Agency</span><span>Grok Bot Hackathon Project · Prototype</span></div></footer>
+  <footer class="container footer"><div class="footer-top"><a class="brand agency-brand" href="./"><img src="./agency.svg" alt="" width="30" height="30"><span>Agentic Agency</span></a><nav aria-label="フッターナビゲーション"><a href="#services">依頼できること</a><a href="#team">Botチーム</a><a href="#work">3つの制作デモ ↗</a></nav></div><div class="footer-bottom"><span>© 2026 Agentic Agency</span><span>Grok Bot Hackathon Project · Prototype</span></div></footer>
 </body>
 </html>

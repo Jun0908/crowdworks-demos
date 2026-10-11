@@ -63,3 +63,11 @@
 - Agentic Agency local result: all section anchors and six demo links resolve; 1440px, 390px and 320px layouts have no horizontal overflow. Desktop/mobile screenshots reviewed. Sample recalculation returned 80 / 37 / 19 / 7; direct demo refresh and return link passed; keyboard skip link works; no browser errors. Supplied document closing question is absent.
 
 - Production (anonymous Chrome): introduction links and cross-demo navigation passed. Leads returned 26 / 14 / 8 / 4; invoice text PDFs returned 3 / 187990; all 5 PDFs including OCR returned 5 / 624070 / 1 overdue / 2 due soon / 2 reviews. Downloaded public XLSX files parsed successfully. Existing renewal demo recalculated 80 / 37 / 19 / 7. No browser runtime errors.
+
+## Three-demo introduction gallery (2026-10-11)
+
+- Introduction now presents three equal cards with actual app screenshots, sample results, input options, actions and downloadable outputs. Hero shortcuts also open each demo directly.
+- Fresh local browser runs for screenshot capture: invoice text PDFs returned 3 / ¥187,990; leads returned 26 input / 14 candidates.
+- Desktop 1440×1000 and mobile 390×844 screenshots visually reviewed. All screenshots load. Widths 320, 390, 768, 1024 and 1440 have no horizontal page overflow.
+- All section anchors resolve. Each gallery CTA opens its matching demo, and each demo returns to the introduction.
+- The gallery appears before the Bot-team design. Current working tools and future Grok API integration remain explicitly distinguished.

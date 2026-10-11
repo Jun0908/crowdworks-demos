@@ -23,7 +23,7 @@
 
 ## 構成
 
-トップページ（`dist/index.html`・`intro.css`・`agency.css`）では、Agentic Agencyの依頼領域、Botチームの構成設計、納品フロー、制作例、Skill再利用の構想を紹介します。Botの稼働実績やGrok連携済みの機能としては扱いません。制作例から `/demo/`・`/invoices/`・`/leads/` に進め、各デモから紹介サイトに戻れます。トップページでは計算エンジンを読み込みません。
+トップページ（`dist/index.html`・`intro.css`・`agency.css`・`gallery.css`）では、Agentic Agencyの依頼領域、3つの制作例、Botチームの構成設計、納品フロー、Skill再利用の構想を紹介します。3つの制作例は同じ大きさのカードに実画面・入力・操作・出力・サンプル結果を掲載し、冒頭にも直接リンクを用意しています。Botの稼働実績やGrok連携済みの機能としては扱いません。制作例から `/demo/`・`/invoices/`・`/leads/` に進め、各デモから紹介サイトに戻れます。トップページでは計算エンジンを読み込みません。
 
 追加の2デモは `tools-worker.js` のPyodideで `work_bridge.py` を実行します。`web/build_tools.py` は元のPythonソースからブラウザで使う関数を生成し、同梱PDF・モックJSON・固定バージョンのPDF/OCRライブラリとライセンスを配布ディレクトリへコピーします。ネットワークAPIクライアントやネイティブPDF/OCR依存は生成したPythonコアに含めません。CSV・Excelへの文字列出力は数式として解釈されないよう処理しています。
 
