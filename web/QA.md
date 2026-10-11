@@ -30,3 +30,4 @@
 - Desktop 1440×1000 and mobile 390×844: introduction page visually inspected; no horizontal overflow.
 - Introduction CTA → demo → live extraction (80 / 37 / 19 / 7) → Excel download → return to introduction passed locally.
 - FAQ expansion works; demo assets and Worker resolve from the shared site root.
+- Vercel production: anonymous introduction → /demo/ → live extraction (80 / 37 / 19 / 7) → 16-sheet XLSX download → introduction passed; no browser errors.
