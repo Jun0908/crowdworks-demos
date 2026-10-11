@@ -61,3 +61,5 @@
 - Vercel production: anonymous introduction → /demo/ → live extraction (80 / 37 / 19 / 7) → 16-sheet XLSX download → introduction passed; no browser errors.
 
 - Agentic Agency local result: all section anchors and six demo links resolve; 1440px, 390px and 320px layouts have no horizontal overflow. Desktop/mobile screenshots reviewed. Sample recalculation returned 80 / 37 / 19 / 7; direct demo refresh and return link passed; keyboard skip link works; no browser errors. Supplied document closing question is absent.
+
+- Production (anonymous Chrome): introduction links and cross-demo navigation passed. Leads returned 26 / 14 / 8 / 4; invoice text PDFs returned 3 / 187990; all 5 PDFs including OCR returned 5 / 624070 / 1 overdue / 2 due soon / 2 reviews. Downloaded public XLSX files parsed successfully. Existing renewal demo recalculated 80 / 37 / 19 / 7. No browser runtime errors.
