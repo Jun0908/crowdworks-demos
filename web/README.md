@@ -1,6 +1,6 @@
-# Koushin — 契約更新チェッカー Web版
+# Agentic Agency 紹介サイトと Koushin 操作デモ
 
-**紹介サイト：[Koushinを知る](https://koushin-checker-jun0908.vercel.app/)**
+**紹介サイト：[Agentic Agencyを知る](https://koushin-checker-jun0908.vercel.app/)**
 
 **操作デモ：[Koushinを試す](https://koushin-checker-jun0908.vercel.app/demo/)**（ログイン不要）
 
@@ -17,7 +17,7 @@
 
 ## 構成
 
-トップページ（`dist/index.html`・`intro.css`）では、解決する課題、機能、サンプルの比較結果、操作画面、使い方、FAQを紹介します。各CTAから `dist/demo/index.html` の操作デモへ進み、デモの「製品紹介」リンクからトップに戻れます。トップページでは計算エンジンを読み込みません。
+トップページ（`dist/index.html`・`intro.css`・`agency.css`）では、Agentic Agencyの依頼領域、Botチームの構成設計、納品フロー、制作例、Skill再利用の構想を紹介します。Botの稼働実績やGrok連携済みの機能としては扱いません。各CTAから `dist/demo/index.html` のKoushin操作デモへ進み、デモの「Agency紹介」リンクからトップに戻れます。トップページでは計算エンジンを読み込みません。
 
 静的HTML／CSS／JavaScriptと、Web Worker内で動作するPyodide 0.27.7を使っています。
 `dist/python/renewal.py` と `extract_renewals.py` は元の契約更新デモからビルド時にコピーし、計算ルールを共有しています。

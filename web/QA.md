@@ -1,5 +1,13 @@
 # Web app verification
 
+## Agentic Agency introduction: QA inventory
+
+- Content: agency identity, broad service areas, Grok Bot workflow explicitly labeled as design; Koushin is a deliverable example. The supplied document's closing question is excluded.
+- Controls: header/footer section links, all demo CTAs and screenshot link; demo return link leads to the agency introduction.
+- Functional flow: agency → demo → sample calculation → agency; verify 80 / 37 / 19 / 7.
+- Visual: desktop 1440×1000 and mobile 390×844, hero, team, showcase, workflow, roadmap and footer; no clipping or overflow.
+- Exploratory: 320px viewport, direct `/demo/` refresh and keyboard skip link. No interaction on the introduction implies contacting or submitting to a Bot.
+
 - Default sample: 250 inputs, 80 targets, 37 three-month contracts, 19 old-method misses, 7 issues, 3 exclusions.
 - Runtime: initialize Python in a Worker, click extraction, confirm live result replaces the saved sample.
 - Inputs: target month, 0–2 month lookahead, all three conventions, sample reset, CSV upload.
@@ -31,3 +39,5 @@
 - Introduction CTA → demo → live extraction (80 / 37 / 19 / 7) → Excel download → return to introduction passed locally.
 - FAQ expansion works; demo assets and Worker resolve from the shared site root.
 - Vercel production: anonymous introduction → /demo/ → live extraction (80 / 37 / 19 / 7) → 16-sheet XLSX download → introduction passed; no browser errors.
+
+- Agentic Agency local result: all section anchors and six demo links resolve; 1440px, 390px and 320px layouts have no horizontal overflow. Desktop/mobile screenshots reviewed. Sample recalculation returned 80 / 37 / 19 / 7; direct demo refresh and return link passed; keyboard skip link works; no browser errors. Supplied document closing question is absent.
