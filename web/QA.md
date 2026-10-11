@@ -22,3 +22,4 @@
 - Desktop 1440×1000 and mobile 390×844: no document horizontal overflow. Mobile extraction and help dialog passed.
 - Visually inspected initial state, results table, comparison, export actions and mobile layout.
 - Public deployment: verified in a fresh unauthenticated Chrome context, recalculated 80 / 37 / 19 / 7, downloaded and parsed a 16-sheet XLSX; no page errors.
+- Vercel production URL: https://koushin-checker-jun0908.vercel.app — repeated anonymous browsing, live extraction (80 / 37 / 19 / 7) and Excel download verification; no page errors.

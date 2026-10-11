@@ -1,6 +1,6 @@
 # Koushin — 契約更新チェッカー Web版
 
-**公開URL：[Koushinを開く](https://koushin-checker-jun0908.junk.chatgpt.site)**（ログイン不要）
+**公開URL：[Koushinを開く](https://koushin-checker-jun0908.vercel.app)**（ログイン不要）
 
 サンプル250名またはCSVを読み込み、契約更新対象者の抽出からAM別の確認資料作成までをブラウザ内で行います。
 
@@ -38,6 +38,15 @@ python -m pytest -q "3_契約更新抽出/tests" web/tests
 ```
 
 元の62件＋Webアダプター12件＝74テストを検証済みです。ブラウザ操作の確認範囲は [QA.md](QA.md) を参照してください。
+
+## Vercelへの公開
+
+`web/vercel.json` はビルド済みの `dist/` を静的ファイルとして配信します。計算処理を変更した場合は `web/build.py` とテストを実行してからデプロイしてください。
+
+```powershell
+vercel link --cwd web --project koushin-checker-jun0908 --scope jkawai0908-9469s-projects --yes
+vercel deploy --cwd web --project koushin-checker-jun0908 --scope jkawai0908-9469s-projects --prod
+```
 
 ## 配布ライブラリ
 
