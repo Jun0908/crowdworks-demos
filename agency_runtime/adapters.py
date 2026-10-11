@@ -1,11 +1,12 @@
 """Run the three existing processing engines without API keys or network calls."""
 import base64
 import importlib
+import hashlib
 import json
 import sys
 from pathlib import Path
 
-from .core import AgencyError, write_json
+from .core import AgencyError, sha, workspace_lock, write_json
 
 ENGINES = Path(__file__).resolve().parents[1] / 'web' / 'dist' / 'python'
 
@@ -46,8 +47,25 @@ def run_assignment(ledger, assignment_id, payload):
             raise AgencyError('Processing adapter requires a production assignment')
         for artifact in assignment['inputArtifacts']:
             ledger.check_artifact(artifact)
-    result = process(assignment['step']['capabilityId'], payload,
-                     Path(assignment['outputDir']) / 'generated')
-    artifacts = [ledger.artifact(assignment_id, path) for path in result['files']]
+    payload_hash = hashlib.sha256(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+    directory = Path(assignment['outputDir']) / 'generated'
+    # A Bot message can be delivered twice. Reuse the first exact outputs,
+    # including after a crash between file creation and ledger registration.
+    with workspace_lock(Path(assignment['outputDir']) / 'adapter-lock'):
+        cache_path = directory / 'adapter-run.json'
+        if cache_path.exists():
+            cache = json.loads(cache_path.read_text(encoding='utf-8'))
+            if cache['payloadHash'] != payload_hash:
+                raise AgencyError('Adapter input changed; request a new revision attempt')
+            result = cache['result']
+            for path, content_hash in cache['fileHashes'].items():
+                file = Path(path).resolve()
+                if not file.is_relative_to(directory.resolve()) or not file.is_file() or sha(file) != content_hash:
+                    raise AgencyError('Cached adapter output changed; request a revision')
+        else:
+            result = process(assignment['step']['capabilityId'], payload, directory)
+            write_json(cache_path, {'payloadHash': payload_hash, 'result': result,
+                                   'fileHashes': {path: sha(Path(path)) for path in result['files']}})
+        artifacts = [ledger.artifact(assignment_id, path) for path in result['files']]
     # Review/finish is a separate Bot action. Processing is not proof of quality.
-    return {'assignmentId': assignment_id, 'artifacts': artifacts, 'summary': result['summary']}
+    return {'assignmentId': assignment_id, 'artifacts': artifacts, 'summary': result['summary'], 'payloadHash': payload_hash}

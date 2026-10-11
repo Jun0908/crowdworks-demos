@@ -385,6 +385,7 @@ class Ledger:
             if same:
                 if same[0]['sha256'] != content_hash:
                     raise AgencyError('Artifact already registered; create a new attempt for changes')
+                self.check_artifact(same[0])
                 return same[0]
             aid = str(uuid.uuid4())
             dest = Path(assignment['outputDir']) / 'files' / aid / name

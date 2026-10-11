@@ -214,3 +214,30 @@ def test_cli_restart_and_json_exit_codes(tmp_path):
     assert json.loads(after.stdout)['data'] == []
     bad = subprocess.run(args + ['show', 'missing'], capture_output=True, text=True, encoding='utf-8')
     assert bad.returncode == 1 and not json.loads(bad.stderr)['ok']
+
+
+def test_adapter_replay_reuses_files_and_rejects_changed_input(ledger, monkeypatch):
+    import agency_runtime.adapters as adapters
+    job = prepared(ledger, 'replay', 'contract_extract')
+    a = ledger.next_assignment(job['jobId'])
+    payload = {'csv_text': (REPO / 'web/dist/sample.csv').read_text(encoding='utf-8-sig'), 'month': '2026-11'}
+    first = run_assignment(ledger, a['assignmentId'], payload)
+    def unexpected(*args):
+        raise AssertionError('Processing must not run twice')
+    monkeypatch.setattr(adapters, 'process', unexpected)
+    second = run_assignment(ledger, a['assignmentId'], payload)
+    assert first['artifacts'] == second['artifacts']
+    with pytest.raises(AgencyError, match='input changed'):
+        run_assignment(ledger, a['assignmentId'], {**payload, 'month': '2026-12'})
+    Path(first['artifacts'][0]['path']).write_bytes(b'changed')
+    with pytest.raises(AgencyError, match='changed artifact'):
+        ledger.finish(a['assignmentId'], result(a, first['artifacts']))
+
+
+def test_init_preserves_unmanaged_workspace(tmp_path):
+    root = tmp_path / 'previous'
+    (root / 'config').mkdir(parents=True)
+    file = root / 'config' / 'company-policy.json'; file.write_text('Previous Bot work')
+    with pytest.raises(AgencyError, match='Existing unmanaged'):
+        Ledger(root).init()
+    assert file.read_text() == 'Previous Bot work'

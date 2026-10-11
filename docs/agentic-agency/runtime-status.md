@@ -7,7 +7,7 @@
 - `agency_runtime`：SQLite台帳、ASSIGN発行、再送の冪等性、1同時割当、入力コピー、出典登録、ファイルSHA256、QA合格条件、修正版の下流無効化、停止/再開/取消、納品ZIP。
 - 既存3処理のアダプター：契約CSV、営業Places形式JSON、請求書の抽出済みテキストから実ファイルを生成。API通信0件。検索・PDF抽出・OCR自体はこのCLIに含まれない。
 - Grok用4 Skill：司令塔、営業/調査/制作、QA、納品準備。bootstrapで配布用コピーを作成可能。コピーとGrokのSkill登録は別操作。
-- `python -m pytest agency_runtime/tests web/tests -q`：**50件成功**（ランタイム21件、既存Web処理29件）。契約サンプル250行から80対象、営業サンプル26件から14候補を確認。請求書はテキストfixtureから11,000円を抽出。
+- `python -m pytest agency_runtime/tests web/tests -q`：**52件成功**（ランタイム23件、既存Web処理29件）。契約サンプル250行から80対象、営業サンプル26件から14候補を確認。請求書はテキストfixtureから11,000円を抽出。同じ処理の再送は保存済みの出力を再利用する。
 
 ## Grok Botで観察した状態
 
