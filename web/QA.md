@@ -71,3 +71,4 @@
 - Desktop 1440×1000 and mobile 390×844 screenshots visually reviewed. All screenshots load. Widths 320, 390, 768, 1024 and 1440 have no horizontal page overflow.
 - All section anchors resolve. Each gallery CTA opens its matching demo, and each demo returns to the introduction.
 - The gallery appears before the Bot-team design. Current working tools and future Grok API integration remain explicitly distinguished.
+- Vercel production: a fresh anonymous browser loaded all three gallery screenshots and followed each card to the correct demo and back to `/`; no browser runtime errors. Production screenshot visually reviewed.
