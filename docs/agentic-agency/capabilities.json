@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "status": "implementation_plan_not_runtime_registry",
+  "activationRule": "Adapter, connection and acceptance checks must pass before enabling a capability. Existing CLI tools are not yet orchestrator adapters.",
+  "capabilities": [
+    {"id":"opportunity_discovery","category":"sales","title":"営業機会の発見","status":"planned","inputs":["company_policy","source_domains"],"outputs":["opportunities.json"],"requires":["search","source_store"]},
+    {"id":"account_research","category":"research","title":"企業・顧客調査","status":"planned","inputs":["company_name_or_url","questions"],"outputs":["account_brief.md"],"requires":["search","source_store"]},
+    {"id":"market_research","category":"research","title":"市場調査","status":"planned","inputs":["topic","region","period","questions"],"outputs":["research.md","sources.json"],"requires":["search","source_store"]},
+    {"id":"competitor_comparison","category":"research","title":"競合比較","status":"planned","inputs":["competitors","comparison_axes"],"outputs":["comparison.csv","summary.md"],"requires":["search","source_store","csv_writer"]},
+    {"id":"requirements_brief","category":"planning","title":"要件定義・実施計画","status":"planned","inputs":["job_brief","constraints"],"outputs":["requirements.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"proposal_draft","category":"sales","title":"営業提案書","status":"planned","inputs":["opportunity_or_brief","research","scope"],"outputs":["proposal.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"outreach_draft","category":"sales","title":"営業・フォロー文面","status":"planned","inputs":["recipient_context","verified_facts","desired_action"],"outputs":["message_draft.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"article_draft","category":"content","title":"記事初稿","status":"planned","inputs":["audience","topic","outline","sources"],"outputs":["article.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"faq_draft","category":"content","title":"FAQ・業務手順書","status":"planned","inputs":["source_documents","audience"],"outputs":["faq.md"],"requires":["text_generation","artifact_store"]},
+    {"id":"leads_clean","category":"data","title":"営業リスト整理","status":"adapter_pending","inputs":["places_json","areas","classification_options"],"outputs":["leads.csv","excluded.csv","leads.xlsx"],"requires":["python_runner","leads_adapter"],"existingSource":"2_焼肉店営業リスト/"},
+    {"id":"contract_extract","category":"data","title":"契約更新抽出","status":"adapter_pending","inputs":["staff_csv","target_month","date_convention"],"outputs":["renewals.csv","renewals.xlsx","messages.zip"],"requires":["python_runner","contract_adapter"],"existingSource":"3_契約更新抽出/"},
+    {"id":"invoice_extract","category":"data","title":"請求書抽出","status":"adapter_pending","inputs":["pdf_files","reference_date"],"outputs":["invoices.xlsx","extracted.json","review_notes.md"],"requires":["python_runner","pdf_ocr","invoice_adapter"],"existingSource":"1_請求書読み取り/"},
+    {"id":"artifact_review","category":"quality","title":"品質確認","status":"planned","inputs":["requirements","artifacts","sources","machine_checks"],"outputs":["review.json"],"requires":["text_generation","artifact_read","validators"]},
+    {"id":"delivery_package","category":"delivery","title":"納品パッケージ作成","status":"planned","inputs":["validated_artifacts"],"outputs":["delivery.md","manifest.json"],"requires":["artifact_store","manifest_writer"]},
+    {"id":"website_build","category":"development","title":"Webサイト制作","status":"planned","inputs":["requirements","assets","copy"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
+    {"id":"application_build","category":"development","title":"業務アプリ制作","status":"planned","inputs":["requirements","data_contracts","acceptance_criteria"],"outputs":["source.zip","preview","test_report.json"],"requires":["code_execution","browser_tests"]},
+    {"id":"slide_deck","category":"content","title":"提案・説明スライド","status":"planned","inputs":["audience","outline","sources","brand"],"outputs":["presentation.pptx","preview.pdf"],"requires":["slide_renderer","visual_validation"]},
+    {"id":"image_creation","category":"media","title":"画像・バナー制作","status":"planned","inputs":["creative_brief","dimensions","licensed_assets"],"outputs":["image.png"],"requires":["image_generation","image_validation"]},
+    {"id":"video_creation","category":"media","title":"説明動画制作","status":"planned","inputs":["script","duration","licensed_assets"],"outputs":["video.mp4"],"requires":["video_generation","video_validation"]},
+    {"id":"crm_sync","category":"operations","title":"CRM更新","status":"planned","inputs":["verified_account_changes"],"outputs":["sync_receipt.json"],"requires":["crm_connector","approval_guard"]},
+    {"id":"external_delivery","category":"delivery","title":"承認済み納品の送信","status":"planned","inputs":["approved_payload","recipient","artifact_versions"],"outputs":["delivery_receipt.json"],"requires":["delivery_connector","approval_guard","idempotency_store"]},
+    {"id":"recurring_report","category":"operations","title":"定期調査・差分レポート","status":"planned","inputs":["baseline_artifacts","schedule_policy"],"outputs":["changes.md","updated_report.md"],"requires":["search","scheduler","artifact_store"]},
+    {"id":"skill_improvement","category":"operations","title":"作業手順の改善案","status":"planned","inputs":["run_metrics","failures","current_instructions"],"outputs":["instruction_patch.md","evaluation_plan.md"],"requires":["text_generation","evaluation_runner"]}
+  ]
+}

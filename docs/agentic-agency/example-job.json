@@ -1,0 +1,17 @@
+{
+  "kind": "job_brief",
+  "title": "飲食店向け業務改善サービスの営業準備",
+  "objective": "小規模飲食店向けに提供できる業務改善サービスを調査し、課題仮説と提供範囲を整理した提案書を作成する。実在企業から受注済みとは扱わない。",
+  "category": "sales",
+  "deliverables": [
+    {"name":"research.md","format":"md","description":"確認した事実・出典・課題仮説を区別した調査メモ"},
+    {"name":"proposal.md","format":"md","description":"対象、課題、提供内容、成果物、前提、不足情報を含む提案書"}
+  ],
+  "inputArtifactIds": [],
+  "acceptanceCriteria": ["主要な事実の出典を追跡できる","顧客の未確認の課題は仮説と明記する","提案書をMarkdownファイルで取得できる"],
+  "constraints": ["外部への営業送信は行わず、提案準備までを対象にする"],
+  "deadline": null,
+  "locale": "ja-JP",
+  "sourceUrls": [],
+  "maxExternalApiCostUsd": 0
+}

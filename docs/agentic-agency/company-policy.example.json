@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "Agentic Agency",
+  "timezone": "Asia/Tokyo",
+  "language": "ja-JP",
+  "mission": "依頼に合う調査・制作を行い、検証可能な成果物を返す",
+  "targetIndustries": [],
+  "sourceDomains": [],
+  "discoveryQueries": [],
+  "preferredCapabilities": ["account_research", "market_research", "proposal_draft", "leads_clean", "contract_extract", "invoice_extract"],
+  "discoveryEnabled": false,
+  "limits": {
+    "maxActiveJobs": 1,
+    "maxActiveAssignments": 1,
+    "maxCandidatesPerRun": 5,
+    "maxDetailedResearchPerRun": 3,
+    "maxProductionJobsPerRun": 1,
+    "maxStepsPerJob": 20,
+    "maxRevisions": 2,
+    "maxExternalApiCostUsd": 0
+  },
+  "scoring": {"serviceFit": 40, "requestSpecificity": 30, "productionFeasibility": 20, "freshness": 10, "autoPrepareThreshold": 70},
+  "approvals": {"externalSend": true, "publish": true, "purchase": true, "scheduleEnable": true},
+  "schedule": {"enabled": false, "expression": null},
+  "notification": "Notify only on completed artifacts, failures or required decisions. Remain quiet on unchanged state or no new candidates.",
+  "paused": false
+}

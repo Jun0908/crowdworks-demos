@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agentic-agency:contracts:v1",
+  "title": "Agentic Agency implementation contracts v1",
+  "description": "Design contracts, not a deployed API. Validate semantic constraints and references separately in the orchestrator.",
+  "oneOf": [{"$ref":"#/$defs/JobBrief"},{"$ref":"#/$defs/Plan"},{"$ref":"#/$defs/StepResult"}],
+  "$defs": {
+    "Uuid": {"type":"string","format":"uuid"},
+    "Ids": {"type":"array","items":{"$ref":"#/$defs/Uuid"},"uniqueItems":true,"maxItems":100},
+    "Role": {"enum":["coordinator","sales","research","creator","qa","delivery"]},
+    "JobBrief": {
+      "type":"object","additionalProperties":false,
+      "required":["kind","title","objective","category","deliverables","inputArtifactIds","acceptanceCriteria"],
+      "properties": {
+        "kind":{"const":"job_brief"},
+        "title":{"type":"string","minLength":1,"maxLength":200},
+        "objective":{"type":"string","minLength":10,"maxLength":10000},
+        "category":{"enum":["sales","research","planning","content","data","development","media","operations","custom"]},
+        "deliverables":{"type":"array","minItems":1,"maxItems":10,"items":{"type":"object","additionalProperties":false,"required":["name","format","description"],"properties":{"name":{"type":"string","minLength":1,"maxLength":200},"format":{"enum":["md","html","csv","xlsx","json","zip","pdf","pptx","png","mp4","preview"]},"description":{"type":"string","minLength":1,"maxLength":2000}}}},
+        "inputArtifactIds":{"$ref":"#/$defs/Ids"},
+        "acceptanceCriteria":{"type":"array","minItems":1,"maxItems":20,"items":{"type":"string","minLength":1,"maxLength":1000}},
+        "constraints":{"type":"array","maxItems":20,"items":{"type":"string","maxLength":1000}},
+        "deadline":{"type":["string","null"],"format":"date-time"},
+        "locale":{"type":"string","enum":["ja-JP","en-US"]},
+        "sourceUrls":{"type":"array","maxItems":20,"uniqueItems":true,"items":{"type":"string","format":"uri","pattern":"^https?://"}},
+        "maxExternalApiCostUsd":{"type":"number","minimum":0,"maximum":100,"description":"Limit for optional external paid APIs; Grok Bot subscription usage is separate and must not be invented."}
+      }
+    },
+    "Plan": {
+      "type":"object","additionalProperties":false,"required":["kind","jobId","summary","steps","questions"],
+      "properties": {
+        "kind":{"const":"plan"},"jobId":{"$ref":"#/$defs/Uuid"},
+        "summary":{"type":"string","minLength":1,"maxLength":2000},
+        "steps":{"type":"array","minItems":0,"maxItems":20,"items":{"$ref":"#/$defs/Step"}},
+        "questions":{"type":"array","maxItems":10,"items":{"type":"object","additionalProperties":false,"required":["id","question","blocking"],"properties":{"id":{"type":"string","pattern":"^q_[a-z0-9_]+$"},"question":{"type":"string","minLength":1,"maxLength":1000},"blocking":{"type":"boolean"}}}}
+      },
+      "description":"Enforce at least one executable step unless there is a blocking question; unique IDs, acyclic dependencies and registered capabilities."
+    },
+    "Step": {
+      "type":"object","additionalProperties":false,"required":["id","role","capabilityId","dependsOn","instructions","inputArtifactIds","acceptanceCriteria"],
+      "properties": {
+        "id":{"type":"string","pattern":"^step_[a-z0-9_]+$"},"role":{"$ref":"#/$defs/Role"},
+        "capabilityId":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},
+        "dependsOn":{"type":"array","maxItems":19,"uniqueItems":true,"items":{"type":"string","pattern":"^step_[a-z0-9_]+$"}},
+        "instructions":{"type":"string","minLength":1,"maxLength":4000},"inputArtifactIds":{"$ref":"#/$defs/Ids"},
+        "acceptanceCriteria":{"type":"array","minItems":1,"maxItems":10,"items":{"type":"string","minLength":1,"maxLength":1000}}
+      }
+    },
+    "StepResult": {
+      "type":"object","additionalProperties":false,
+      "required":["kind","stepId","outcome","summary","artifactIds","sourceIds","checks","blockers"],
+      "properties": {
+        "kind":{"const":"step_result"},"stepId":{"type":"string","pattern":"^step_[a-z0-9_]+$"},
+        "outcome":{"enum":["succeeded","revise","blocked"]},"summary":{"type":"string","minLength":1,"maxLength":2000},
+        "artifactIds":{"$ref":"#/$defs/Ids"},"sourceIds":{"$ref":"#/$defs/Ids"},
+        "checks":{"type":"array","maxItems":50,"items":{"type":"object","additionalProperties":false,"required":["id","status","evidence"],"properties":{"id":{"type":"string","minLength":1,"maxLength":100},"status":{"enum":["PASS","FAIL","NOT_CHECKED"]},"evidence":{"type":"string","minLength":1,"maxLength":2000},"artifactId":{"$ref":"#/$defs/Uuid"}}}},
+        "blockers":{"type":"array","maxItems":20,"items":{"type":"string","minLength":1,"maxLength":1000}}
+      },
+      "allOf":[
+        {"if":{"properties":{"outcome":{"const":"blocked"}}},"then":{"properties":{"blockers":{"minItems":1}}}},
+        {"if":{"properties":{"outcome":{"const":"succeeded"}}},"then":{"properties":{"blockers":{"maxItems":0}}}}
+      ],
+      "description":"Only recorded artifact/source IDs may be returned. Success does not override failed mandatory checks."
+    }
+  }
+}
